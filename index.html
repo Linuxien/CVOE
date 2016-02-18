@@ -17,6 +17,7 @@
 		<script type="text/javascript" src="assets/lib/turnjs4/extras/modernizr.2.5.3.min.js"></script>
 		<script type="text/javascript" src="assets/lib/turnjs4/lib/hash.js"></script>
 		<script type="text/javascript" src="assets/lib/turnjs4/lib/turn.min.js"></script>
+		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
 		<link rel="stylesheet" href="assets/css/main.css">
 	</head>
@@ -33,9 +34,9 @@
 					<div style="background-image:url(assets/pages/page_1/page1.2.png)"></div>
 					<div style="background-image:url(assets/pages/page_2/page2.1.png)"></div>
 					<div style="background-image:url(assets/pages/page_2/page2.2.png)">
-						<img id="cactus" src="assets/pages/page_2/cactus1.png">
+						<img id="cactus" class="ui-widget-content" src="assets/pages/page_2/cactus1.png">
 						<img id="cactus_coupe" src="assets/pages/page_2/cactus2.png">
-						<img id="stick" src="assets/pages/page_2/stick.png">
+						<img id="stick" class="ui-widget-content" src="assets/pages/page_2/stick.png">
 					</div>
 					<div style="background-image:url(assets/pages/page_3/page3.1.png)"></div>
 					<div style="background-image:url(assets/pages/page_3/page3.2.png)"></div>
@@ -62,6 +63,14 @@
 				}
 
 				loadApp();
+
+				$('#stick').draggable();
+
+				$('#cactus').droppable({
+					drop: function(event, ui) {
+						$(this).hide();
+					}
+				});
 			});
 		</script>
 	</body>

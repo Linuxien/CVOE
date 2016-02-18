@@ -75,11 +75,14 @@ body{
 	position: absolute;
 	top: 13em;
 	left: 10em;
-	display: none;
 }
 
 #stick{
 	position: absolute;
 	top: 27em;
 	left: 17em;
+}
+
+#stick:hover {
+	cursor: pointer;
 }
