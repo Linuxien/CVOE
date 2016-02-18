@@ -64,3 +64,22 @@ body{
 	-ms-box-shadow:0 0 20px #ccc;
 	box-shadow:0 0 20px #ccc;
 }*/
+
+#cactus{
+	position: absolute;
+	top: 13em;
+	left: 10em;
+}
+
+#cactus_coupe{
+	position: absolute;
+	top: 13em;
+	left: 10em;
+	display: none;
+}
+
+#stick{
+	position: absolute;
+	top: 27em;
+	left: 17em;
+}
