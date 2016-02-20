@@ -212,6 +212,7 @@
       $('#btnStart').on('click', function () {
         speakTrame(0, 0, utterance);
         $(this).hide();
+        $(this).off('click');
         //                cycleImages();
       });
     }
