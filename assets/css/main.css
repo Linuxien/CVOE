@@ -139,10 +139,14 @@ body {
 }
 
 #canvas_clapclap {
+	position: absolute;
 	background-color: white;
 	width: 250px;
 	height: 150px;
 	border: 1px solid black;
+	z-index: 10;
+	top: 17%;
+	left: 50%;
 }
 
 #audio {

@@ -22,8 +22,8 @@
   <script type="text/javascript" src="assets/lib/turnjs4/extras/modernizr.2.5.3.min.js"></script>
   <script type="text/javascript" src="assets/lib/turnjs4/lib/hash.js"></script>
   <script type="text/javascript" src="assets/lib/turnjs4/lib/turn.min.js"></script>
-  <!--  <script type="text/javascript" src="assets/lib/paper-core.min.js"></script>-->
-  <!--  <script type="text/javascript" src="assets/lib/paper-full.min.js"></script>-->
+  <script type="text/javascript" src="assets/lib/paper-core.min.js"></script>
+  <script type="text/javascript" src="assets/lib/paper-full.min.js"></script>
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
   <script type="text/javascript" src="assets/js/textPage.js"></script>
@@ -75,7 +75,7 @@
       </div>
     </div>
 
-    <!-- <canvas id="canvas_clapclap"></canvas> -->
+    <canvas id="canvas_clapclap"></canvas>
 
     <div id="divsubtitles">
       <p id="sub"></p>
@@ -83,6 +83,30 @@
   </div>
 
   <script type="text/javascript" src="assets/js/basic.js"></script>
+
+	<script type="text/paperscript" canvas="canvas_clapclap">
+		var path;
+
+		tool.minDistance = 20;
+
+		function onMouseDown(event) {
+			if (path) {
+				path.selected = false;
+			};
+			path = new Path();
+			path.strokeColor = 'black';
+			path.fullySelected = true;
+		}
+
+		function onMouseDrag(event) {
+			path.add(event.point);
+		}
+
+		function onMouseUp(event) {
+			path.selected = false;
+			path.smooth();
+		}
+	</script>
 
   <script type="text/javascript">
     function cycleImages(idNextTrame) {
@@ -146,6 +170,10 @@
             });
           }
         }
+
+	    if (page === 6) {
+	    	$('#canvas_clapclap').fadeIn('slow');
+	    }
       });
     }
 
@@ -181,6 +209,7 @@
         //                cycleImages();
       });
     }
+    $('#canvas_clapclap').hide();
   </script>
 </body>
 
