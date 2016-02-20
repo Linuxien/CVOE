@@ -57,6 +57,11 @@ body {
     font-size: large;
 }
 
+#tarte {
+	max-width: 10%;
+	margin-top: 33em;
+	margin-left: 25em;
+}
 
 #cactus {
     position: absolute;
