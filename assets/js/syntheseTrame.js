@@ -37,33 +37,33 @@ window.onload = function () {
 }
 
 var trame1 = [
-//  {
-//    'speaker': "Matheo",
-//    'dialog': "Nous n’avons rien à faire aujourd’hui"
-//  },
-//  {
-//    'speaker': "Emma",
-//    'dialog': "Nous allons rendre visite à l’oncle Ernest, il a toujours de super histoires !"
-//  }
+  {
+    'speaker': "Matheo",
+    'dialog': "Nous n’avons rien à faire aujourd’hui"
+  },
+  {
+    'speaker': "Emma",
+    'dialog': "Nous allons rendre visite à l’oncle Ernest, il a toujours de super histoires !"
+  }
 ];
 
 var trame2 = [
-//  {
-//    'speaker': "Matheo",
-//    'dialog': "Tiens, l’oncle Ernest ne répond pas"
-//  },
-//  {
-//    'speaker': "Emma",
-//    'dialog': "Il n’est pas là ! "
-//  },
-//  {
-//    'speaker': "Matheo",
-//    'dialog': "Regarde, c’est quoi ce livre ? Allons le voir !"
-//  },
-//  {
-//    'speaker': "Emma",
-//    'dialog': "C’est une mauvaise idée, rentrons !"
-//  }
+  {
+    'speaker': "Matheo",
+    'dialog': "Tiens, l’oncle Ernest ne répond pas"
+  },
+  {
+    'speaker': "Emma",
+    'dialog': "Il n’est pas là ! "
+  },
+  {
+    'speaker': "Matheo",
+    'dialog': "Regarde, c’est quoi ce livre ? Allons le voir !"
+  },
+  {
+    'speaker': "Emma",
+    'dialog': "C’est une mauvaise idée, rentrons !"
+  }
 ]
 var trame3 = [
   {
@@ -80,56 +80,57 @@ var trames = [
 
 
 function speakTrame(id, step, utterance) {
-  var trameCrt = trames[id];
-//  console.log('TrameCrt : ' + trameCrt);
+  if (id < trames.length) {
 
-  // si pas de trame crt alors on arrete tout
-  // if trameCrt undefined
-    
-  var nbtext = trameCrt.length;
-//  console.info('Taille trameCrt : ' + nbtext);
+    var trameCrt = trames[id];
+    //  console.log('TrameCrt : ' + trameCrt);
 
-  // si non dernier dialogue
-  if (step < nbtext) {
-    // on recupere le dialogue et la speaker
-    var quiParle = trameCrt[step].speaker;
-    var dial = trameCrt[step].dialog;
-    
-    // on modifie le pitch des voix des enfants
-    if(quiParle === 'Matheo'){
-      utterance.pitch = 0.5;
-    } else if (quiParle === 'Emma'){
-      utterance.pitch = 1.5;
+    // si pas de trame crt alors on arrete tout
+
+    var nbtext = trameCrt.length;
+    //  console.info('Taille trameCrt : ' + nbtext);
+
+    // si non dernier dialogue
+    if (step < nbtext) {
+      // on recupere le dialogue et la speaker
+      var quiParle = trameCrt[step].speaker;
+      var dial = trameCrt[step].dialog;
+
+      // on modifie le pitch des voix des enfants
+      if (quiParle === 'Matheo') {
+        utterance.pitch = 0.5;
+      } else if (quiParle === 'Emma') {
+        utterance.pitch = 1.5;
+      } else {
+        // au cas où
+        utterance.pitch = 1;
+      }
+      //    console.log('QUI PARLE : ' + quiParle)
+      // on lui dit son texte
+      utterance.text = dial;
+
+      // au debut, on change les sous titre
+      utterance.onstart = function (event) {
+        majSubtitles(dial, quiParle);
+      }
+
+      // a la fin de ce dialogue, on passe au suivant (next step)
+      utterance.onend = function (event) {
+        //      console.info('DIAL FINI ' + step);
+        step++;
+        speakTrame(id, step, utterance);
+      }
+
+      // on le speak
+      window.speechSynthesis.speak(utterance);
     } else {
-      // au cas où
-      utterance.pitch = 1;
-    }
-//    console.log('QUI PARLE : ' + quiParle)
-    // on lui dit son texte
-    utterance.text = dial;
+      // sinon on peut passer à la trame suivante
 
-    // au debut, on change les sous titre
-    utterance.onstart = function (event) {
-      majSubtitles(dial, quiParle);
-    }
-
-    // a la fin de ce dialogue, on passe au suivant (next step)
-    utterance.onend = function (event) {
-//      console.info('DIAL FINI ' + step);
-      step++;
-      speakTrame(id, step, utterance);
-    }
-
-    // on le speak
-    window.speechSynthesis.speak(utterance);
-  } else {
-    // sinon on peut passer à la trame suivante
-
-    if (id !== 1) {
-      console.info('NEXT TRAME');
-      cycleImages(id + 1);
+      console.log('ID =? ' + id);
+      if (id !== 1) {
+        console.info('NEXT TRAME');
+        cycleImages(id + 1);
+      }
     }
   }
-
-
 }
