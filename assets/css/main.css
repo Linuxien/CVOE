@@ -1,40 +1,40 @@
 /* Basic sample */
 
 * {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  overflow: hidden;
-  background-color: #fcfcfc;
+    overflow: hidden;
+    background-color: #fcfcfc;
 }
 
 .flipbook-viewport {
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
 }
 
 .flipbook-viewport .container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: auto;
 }
 
 .flipbook-viewport .flipbook {
-  width: 922px;
-  height: 600px;
-  left: -461px;
-  top: -300px;
+    width: 922px;
+    height: 600px;
+    left: -461px;
+    top: -300px;
 }
 
 .flipbook-viewport .page {
-  width: 461px;
-  height: 600px;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
+    width: 461px;
+    height: 600px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 
 /*.flipbook .page{
@@ -46,13 +46,13 @@ body {
 }*/
 
 .flipbook-viewport .page img {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  margin: 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin: 0;
 }
 
 
@@ -70,31 +70,33 @@ body {
 }*/
 
 #divsubtitles {
-  position: absolute;
-  top: 90%;
-  left: 50%;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    z-index: 3;
 }
 
+
 #cactus {
-  position: absolute;
-  top: 13em;
-  left: 10em;
+    position: absolute;
+    top: 13em;
+    left: 10em;
 }
 
 #cactus_coupe {
-  position: absolute;
-  top: 13em;
-  left: 10em;
+    position: absolute;
+    top: 13em;
+    left: 10em;
 }
 
 #stick {
-  position: absolute;
-  top: 27em;
-  left: 17em;
+    position: absolute;
+    top: 27em;
+    left: 17em;
 }
 
 #stick:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 #cycler {
@@ -114,7 +116,7 @@ body {
 }
 
 #story {
-	margin-left: 7em;
+    margin-left: 7em;
 }
 
 #cycler img.active {
@@ -126,15 +128,15 @@ body {
 }
 
 #menu {
-	margin-top: 1.5em;
-	margin-bottom: 1em;
-	text-align: center;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+    text-align: center;
 }
 
 #menu a {
-	text-decoration: none;
-	cursor: pointer;
-	color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    color: #fff;
     background-color: #0275d8;
     border-color: #0275d8;
     border-radius: 2px;

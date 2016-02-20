@@ -24,13 +24,12 @@
   <script type="text/javascript" src="assets/lib/paper-full.min.js"></script>
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
-  <script type="text/javascript" src="assets/js/synthese.js"></script>
+  <script type="text/javascript" src="assets/js/syntheseTrame.js"></script>
 
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
 
 <body>
-	
 	<div id="story">
 		<div id="menu">
 		 	<a id="btnStart" href="#">Lire</a>
@@ -73,14 +72,13 @@
 		  <!-- <canvas id="canvas_clapclap"></canvas> -->
 
 		<div id="divsubtitles">
-			<p id="sub">test</p>
+			<p id="sub"></p>
 		</div>
 	</div>
-	
   <script type="text/javascript" src="assets/js/basic.js"></script>
 
   <script type="text/javascript">
-    function cycleImages() {
+    function cycleImages(idNextTrame) {
       var $active = $('#cycler .active');
 
       // var $next = ($active.next().length > 0) ? $active.next() : $('#cycler img:first');
@@ -90,6 +88,7 @@
       $active.fadeOut(1500, function () { //fade out the top image
         $active.css('z-index', 1).show().removeClass('active'); //reset the z-index and unhide the image
         $next.css('z-index', 3).addClass('active'); //make the next image the top one
+        speakTrame(idNextTrame, 0, utterance);
       });
     }
 
@@ -104,7 +103,7 @@
 
       $('.flipbook').bind('turned', function (event, page, view) {
         console.log('Page: ' + page);
-        
+
         if (page === 6) {
         	if ($('#cactus').css('display') !== 'none') {
         		$(".flipbook").turn("disable", true);
@@ -136,18 +135,23 @@
     function majSubtitles(text, quiParle) {
       $('#sub').text(quiParle + ' : ' + text);
     }
+    
+    var utterance = new SpeechSynthesisUtterance();
 
     window.onload = function () {
-      var utterance = new SpeechSynthesisUtterance();
       window.speechSynthesis.onvoiceschanged = function () {
+        // affiche les voix dispo de Google
+        //        window.speechSynthesis.getVoices().forEach(function (voice) {
+        //          console.log(voice.name, voice.default ? '(default)' : '');
+        //        });
         utterance.voice = window.speechSynthesis.getVoices()[7];
         utterance.lang = "fr-FR";
         //        console.log(window.speechSynthesis.getVoices());
       }
-
       $('#btnStart').on('click', function () {
         speakTrame(0, 0, utterance);
-        cycleImages();
+        $(this).hide();
+        //                cycleImages();
       });
   	}
   </script>
