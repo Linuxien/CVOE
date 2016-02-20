@@ -34,11 +34,11 @@
 		 	<a id="btnStart" href="#">Commencer</a>
 		</div>
 
-		  <div id="cycler">
+		  <!-- <div id="cycler">
 		    <img class="active" src="assets/trames/trame1.png">
 		    <img src="assets/trames/trame2.png">
 		    <img src="assets/trames/trame3.png">
-		  </div>
+		  </div> -->
 
 		  <div class="flipbook-viewport">
 		    <div class="container">
@@ -96,39 +96,47 @@
 
       $('.flipbook').bind('turned', function (event, page, view) {
         console.log('Page: ' + page);
+        
         if (page === 6) {
-          $('#stick').draggable();
+        	$(".flipbook").turn("disable", true);
 
-          $('#cactus').droppable({
-            drop: function (event, ui) {
-              $(this).hide();
-            }
-          });
+			$('#stick').draggable();
+
+			$('#cactus').droppable({
+				drop: function (event, ui) {
+					$(this).fadeOut();
+					$('#stick').fadeOut();
+					$(".flipbook").turn("disable", false);
+				}
+			});
+
+			
         }
       });
     }
 
-    function majSubtitles(text, quiParle) {
-      $('#sub').text(quiParle + ' : ' + text);
-    }
+    $(document).ready(function() {
+    	loadApp();
+    });
 
-    window.onload = function () {
-      var utterance = new SpeechSynthesisUtterance();
-      window.speechSynthesis.onvoiceschanged = function () {
-        utterance.voice = window.speechSynthesis.getVoices()[7];
-        utterance.lang = "fr-FR";
-        //        console.log(window.speechSynthesis.getVoices());
-      }
+    // function majSubtitles(text, quiParle) {
+    //   $('#sub').text(quiParle + ' : ' + text);
+    // }
 
-      $('#btnStart').on('click', function () {
-        speakTrame(0, 0, utterance);
-        cycleImages();
-      });
+    // window.onload = function () {
+    //   var utterance = new SpeechSynthesisUtterance();
+    //   window.speechSynthesis.onvoiceschanged = function () {
+    //     utterance.voice = window.speechSynthesis.getVoices()[7];
+    //     utterance.lang = "fr-FR";
+    //     //        console.log(window.speechSynthesis.getVoices());
+    //   }
+
+    //   $('#btnStart').on('click', function () {
+    //     speakTrame(0, 0, utterance);
+    //     cycleImages();
+    //   });
 
       // setInterval('cycleImages()', 7000);
-
-      loadApp();
-    };
   </script>
 </body>
 
