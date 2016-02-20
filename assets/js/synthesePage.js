@@ -115,6 +115,7 @@ function nextDial(idPage, idDial) {
   } else if (idPage === 5){
     // on fait apparaitre le canvas
     $('#canvas_clapclap').fadeIn('slow');
+    $('#btnStart').html('Valider le dessin !').fadeIn();
   }
 }
 
