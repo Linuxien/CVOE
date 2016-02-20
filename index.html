@@ -151,12 +151,6 @@
           
           if ($('#cactus').css('display') !== 'none') {
             $(".flipbook").turn("disable", true);
-            
-            // on clique sur le livre
-            $(".flipbook").on('click', function(){
-              dialPage(2);
-              $(this).off('click');
-            });
 
             $('#stick').draggable();
 

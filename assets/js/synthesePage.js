@@ -95,9 +95,16 @@ function nextDial(idPage, idDial) {
     }
 
     // MAJ sous titres onstart
-  } else if (idPage === 0){
+  } else if (idPage === 0) {
     // seulement pour la premiere page
     $(".flipbook").turn("disable", false);
+  } else if (idPage === 1) {
+    // seulement pour le debut de la seconde page
+    // on clique sur le livre
+    $(".flipbook").on('click', function () {
+      dialPage(2);
+      $(this).off('click');
+    });
   }
 }
 
@@ -105,10 +112,10 @@ function nextDial(idPage, idDial) {
 // TODO ajout attr pour ne pas repet les dial
 function dialPage(id) {
   // seulement pour la premiere page
-  if(id === 0){
+  if (id === 0) {
     $(".flipbook").turn("disable", true);
   }
-  
+
   nextDial(id, 0);
 
 }
