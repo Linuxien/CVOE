@@ -3,101 +3,131 @@
 <!--[if IE 7 ]>    <html lang="en" class="ie7"> <![endif]-->
 <!--[if IE 8 ]>    <html lang="en" class="ie8"> <![endif]-->
 <!--[if IE 9 ]>    <html lang="en" class="ie9"> <![endif]-->
-<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width = 1050, user-scalable = no" />
 
-		<title>Le Carnet de Voyage de l'Oncle Ernest</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width = 1050, user-scalable = no" />
 
-		<script type="text/javascript" src="assets/lib/turnjs4/extras/jquery.min.1.7.js"></script>
-		<script type="text/javascript" src="assets/lib/turnjs4/extras/modernizr.2.5.3.min.js"></script>
-		<script type="text/javascript" src="assets/lib/turnjs4/extras/jquery.mousewheel.min.js"></script>
-		<script type="text/javascript" src="assets/lib/turnjs4/extras/modernizr.2.5.3.min.js"></script>
-		<script type="text/javascript" src="assets/lib/turnjs4/lib/hash.js"></script>
-		<script type="text/javascript" src="assets/lib/turnjs4/lib/turn.min.js"></script>
-		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <title>Le Carnet de Voyage de l'Oncle Ernest</title>
 
-		<link rel="stylesheet" href="assets/css/main.css">
-	</head>
-		
-	<body>
+  <script type="text/javascript" src="assets/lib/turnjs4/extras/jquery.min.1.7.js"></script>
+  <script type="text/javascript" src="assets/lib/turnjs4/extras/modernizr.2.5.3.min.js"></script>
+  <script type="text/javascript" src="assets/lib/turnjs4/extras/jquery.mousewheel.min.js"></script>
+  <script type="text/javascript" src="assets/lib/turnjs4/extras/modernizr.2.5.3.min.js"></script>
+  <script type="text/javascript" src="assets/lib/turnjs4/lib/hash.js"></script>
+  <script type="text/javascript" src="assets/lib/turnjs4/lib/turn.min.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
-		<div id="cycler">
-			<img class="active" src="assets/trames/trame1.png">
-			<img src="assets/trames/trame2.png">
-			<img src="assets/trames/trame3.png">
-		</div>
+  <script type="text/javascript" src="assets/js/synthese.js"></script>
 
-		<div class="flipbook-viewport">
-			<div class="container">
-				<div class="flipbook">
-					<div style="background-image:url(assets/bookCover.png)"></div>
-					<div style="background-image:url(assets/bookBackground1.png)"></div>
-					<div style="background-image:url(assets/bookBackground2.png)"></div>
-					<div style="background-image:url(assets/pages/page_1/page1.1.png)"></div>
-					<div style="background-image:url(assets/pages/page_1/page1.2.png)"></div>
-					<div style="background-image:url(assets/pages/page_2/page2.1.png)"></div>
-					<div style="background-image:url(assets/pages/page_2/page2.2.png)">
-						<img id="cactus" class="ui-widget-content" src="assets/pages/page_2/cactus1.png">
-						<img id="cactus_coupe" src="assets/pages/page_2/cactus2.png">
-						<img id="stick" class="ui-widget-content" src="assets/pages/page_2/stick.png">
-					</div>
-					<div style="background-image:url(assets/pages/page_3/page3.1.png)"></div>
-					<div style="background-image:url(assets/pages/page_3/page3.2.png)"></div>
-					<div style="background-image:url(assets/pages/page_4/page4.1.png)"></div>
-					<div style="background-image:url(assets/pages/page_4/page4.2.png)"></div>
-					<div style="background-image:url(assets/pages/page_5/page5.1.png)"></div>
-					<div style="background-image:url(assets/pages/page_5/page5.2.png)"></div>
-				</div>
-			</div>
-		</div>
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
 
-		<script type="text/javascript" src="assets/js/basic.js"></script>
+<body>
 
-		<script type="text/javascript">
-			function cycleImages(){
-				var $active = $('#cycler .active');
+  <div id="cycler">
+    <div class="active" id="menu">
+      <button id="btnStart">Commencer</button>
+    </div>
+    <img src="assets/trames/trame1.png">
+    <!--    <img class="active" src="assets/trames/trame1.png">-->
+    <img src="assets/trames/trame2.png">
+    <img src="assets/trames/trame3.png">
+  </div>
 
-				// var $next = ($active.next().length > 0) ? $active.next() : $('#cycler img:first');
-				var $next = ($active.next().length > 0) ? $active.next() : $('#cycler').fadeOut();
-				$next.css('z-index', 2);//move the next image up the pile
-				
-				$active.fadeOut(1500, function(){//fade out the top image
-					$active.css('z-index', 1).show().removeClass('active');//reset the z-index and unhide the image
-					$next.css('z-index', 3).addClass('active');//make the next image the top one
-				});
-			}
+  <div class="flipbook-viewport">
+    <div class="container">
+      <div class="flipbook">
+        <div style="background-image:url(assets/bookCover.png)"></div>
+        <div style="background-image:url(assets/bookBackground1.png)"></div>
+        <div style="background-image:url(assets/bookBackground2.png)"></div>
+        <div style="background-image:url(assets/pages/page_1/page1.1.png)"></div>
+        <div style="background-image:url(assets/pages/page_1/page1.2.png)"></div>
+        <div style="background-image:url(assets/pages/page_2/page2.1.png)"></div>
+        <div style="background-image:url(assets/pages/page_2/page2.2.png)">
+          <img id="cactus" class="ui-widget-content" src="assets/pages/page_2/cactus1.png">
+          <img id="cactus_coupe" src="assets/pages/page_2/cactus2.png">
+          <img id="stick" class="ui-widget-content" src="assets/pages/page_2/stick.png">
+        </div>
+        <div style="background-image:url(assets/pages/page_3/page3.1.png)"></div>
+        <div style="background-image:url(assets/pages/page_3/page3.2.png)"></div>
+        <div style="background-image:url(assets/pages/page_4/page4.1.png)"></div>
+        <div style="background-image:url(assets/pages/page_4/page4.2.png)"></div>
+        <div style="background-image:url(assets/pages/page_5/page5.1.png)"></div>
+        <div style="background-image:url(assets/pages/page_5/page5.2.png)"></div>
+      </div>
+    </div>
+  </div>
 
-			function loadApp() {
-				$('.flipbook').turn({
-					width:922,
-					height:600,
-					elevation: 0,
-					gradients: true,
-					autoCenter: true,
-				});
+  <div id="divsubtitles">
+    <p id="sub">test</p>
+  </div>
 
-				$(".flipbook").bind("turned", function(event, page, view) {
-					console.log("Page: " + page);
-					if (page === 6) {
-						$('#stick').draggable();
+  <script type="text/javascript" src="assets/js/basic.js"></script>
 
-						$('#cactus').droppable({
-							drop: function(event, ui) {
-								$(this).hide();
-							}
-						});
-					}
-				});
-			}
+  <script type="text/javascript">
+    function cycleImages() {
+      var $active = $('#cycler .active');
 
-			$(document).ready(function() {
-				setInterval('cycleImages()', 7000);
+      // var $next = ($active.next().length > 0) ? $active.next() : $('#cycler img:first');
+      var $next = ($active.next().length > 0) ? $active.next() : $('#cycler').fadeOut();
+      $next.css('z-index', 2); //move the next image up the pile
 
-				loadApp();
-			});
-		</script>
-	</body>
+      $active.fadeOut(1500, function () { //fade out the top image
+        $active.css('z-index', 1).show().removeClass('active'); //reset the z-index and unhide the image
+        $next.css('z-index', 3).addClass('active'); //make the next image the top one
+      });
+    }
+
+    function loadApp() {
+      $('.flipbook').turn({
+        width: 922,
+        height: 600,
+        elevation: 0,
+        gradients: true,
+        autoCenter: true,
+      });
+
+      $(".flipbook").bind("turned", function (event, page, view) {
+        console.log("Page: " + page);
+        if (page === 6) {
+          $('#stick').draggable();
+
+          $('#cactus').droppable({
+            drop: function (event, ui) {
+              $(this).hide();
+            }
+          });
+        }
+      });
+    }
+
+    function majSubtitles(text, quiParle) {
+      $('#sub').text(quiParle + ' : ' + text);
+    }
+
+    window.onload = function () {
+      var utterance = new SpeechSynthesisUtterance();
+      window.speechSynthesis.onvoiceschanged = function () {
+        utterance.voice = window.speechSynthesis.getVoices()[7];
+        utterance.lang = "fr-FR";
+        //        console.log(window.speechSynthesis.getVoices());
+      }
+
+      $('#btnStart').on('click', function () {
+        speakTrame(0, 0, utterance);
+        cycleImages();
+      });
+
+      // setInterval('cycleImages()', 7000);
+
+      loadApp();
+    };
+  </script>
+</body>
+
 </html>
