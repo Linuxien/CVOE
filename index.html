@@ -23,6 +23,7 @@
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
   <script type="text/javascript" src="assets/js/syntheseTrame.js"></script>
+  <script type="text/javascript" src="assets/js/synthesePage.js"></script>
 
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
@@ -30,15 +31,22 @@
 <body>
 
   <div id="story">
+    <audio id="audio" controls="controls">
+      <source id="mp3Source" src="" type="audio/mpeg"></source>
+      Your browser does not support the audio format.
+    </audio>
+
     <div id="menu">
       <a id="btnStart" href="#">Lire</a>
     </div>
 
+<!--
     <div id="cycler">
       <img class="active" src="assets/trames/trame1.png">
       <img src="assets/trames/trame2.png">
       <img src="assets/trames/trame3.png">
     </div>
+-->
 
     <div class="flipbook-viewport">
       <div class="container">
@@ -95,7 +103,12 @@
 
       $('.flipbook').bind('turned', function (event, page, view) {
         console.log('Page: ' + page);
-
+        
+        if (page === 2){
+          console.log('PAGE 2, FAIT PETER LES DIALOGUES');
+          dialPage(0);
+        }
+        
         if (page === 4) {
           if ($('#cactus').css('display') !== 'none') {
             $(".flipbook").turn("disable", true);

@@ -37,38 +37,38 @@ window.onload = function () {
 }
 
 var trame1 = [
-  {
-    'speaker': "matheo",
-    'dialog': "Nous n’avons rien à faire aujourd’hui"
-  },
-  {
-    'speaker': "emma",
-    'dialog': "Nous allons rendre visite à l’oncle Ernest, il a toujours de super histoires !"
-  }
+//  {
+//    'speaker': "Matheo",
+//    'dialog': "Nous n’avons rien à faire aujourd’hui"
+//  },
+//  {
+//    'speaker': "Emma",
+//    'dialog': "Nous allons rendre visite à l’oncle Ernest, il a toujours de super histoires !"
+//  }
 ];
 
 var trame2 = [
-  {
-    'speaker': "matheo",
-    'dialog': "Tiens, l’oncle Ernest ne répond pas"
-  },
-  {
-    'speaker': "emma",
-    'dialog': "Il n’est pas là ! "
-  },
-  {
-    'speaker': "matheo",
-    'dialog': "Regarde, c’est quoi ce livre ? Allons le voir !"
-  },
-  {
-    'speaker': "emma",
-    'dialog': "C’est une mauvaise idée, rentrons !"
-  }
+//  {
+//    'speaker': "Matheo",
+//    'dialog': "Tiens, l’oncle Ernest ne répond pas"
+//  },
+//  {
+//    'speaker': "Emma",
+//    'dialog': "Il n’est pas là ! "
+//  },
+//  {
+//    'speaker': "Matheo",
+//    'dialog': "Regarde, c’est quoi ce livre ? Allons le voir !"
+//  },
+//  {
+//    'speaker': "Emma",
+//    'dialog': "C’est une mauvaise idée, rentrons !"
+//  }
 ]
 var trame3 = [
   {
-    'speaker': "emma matheo",
-    'dialog': "ouaaaaaah"
+    'speaker': "Emma",
+    'dialog': "ouaaaaaa"
   }
 ]
 
@@ -81,13 +81,13 @@ var trames = [
 
 function speakTrame(id, step, utterance) {
   var trameCrt = trames[id];
-  console.log('TrameCrt : ' + trameCrt);
+//  console.log('TrameCrt : ' + trameCrt);
 
   // si pas de trame crt alors on arrete tout
   // if trameCrt undefined
     
   var nbtext = trameCrt.length;
-  console.info('Taille trameCrt : ' + nbtext);
+//  console.info('Taille trameCrt : ' + nbtext);
 
   // si non dernier dialogue
   if (step < nbtext) {
@@ -96,15 +96,15 @@ function speakTrame(id, step, utterance) {
     var dial = trameCrt[step].dialog;
     
     // on modifie le pitch des voix des enfants
-    if(quiParle === 'matheo'){
+    if(quiParle === 'Matheo'){
       utterance.pitch = 0.5;
-    } else if (quiParle === 'emma'){
+    } else if (quiParle === 'Emma'){
       utterance.pitch = 1.5;
     } else {
       // au cas où
       utterance.pitch = 1;
     }
-    console.log('QUI PARLE : ' + quiParle)
+//    console.log('QUI PARLE : ' + quiParle)
     // on lui dit son texte
     utterance.text = dial;
 
@@ -115,7 +115,7 @@ function speakTrame(id, step, utterance) {
 
     // a la fin de ce dialogue, on passe au suivant (next step)
     utterance.onend = function (event) {
-      console.info('DIAL FINI ' + step);
+//      console.info('DIAL FINI ' + step);
       step++;
       speakTrame(id, step, utterance);
     }
