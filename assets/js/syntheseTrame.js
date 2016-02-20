@@ -94,7 +94,18 @@ function speakTrame(id, step, utterance) {
     // on recupere le dialogue et la speaker
     var quiParle = trameCrt[step].speaker;
     var dial = trameCrt[step].dialog;
+    
     // on modifie l'utterance pour la voix
+    if(quiParle === 'matheo'){
+      utterance.pitch = 0.5;
+    } else if (quiParle === 'emma'){
+      utterance.pitch = 1.5;
+    } else {
+      // au cas où
+      utterance.pitch = 1;
+    }
+    console.log('QUI PARLE : ' + quiParle)
+    // on lui dit son texte
     utterance.text = dial;
 
     // au debut, on change les sous titre
@@ -102,7 +113,7 @@ function speakTrame(id, step, utterance) {
       majSubtitles(dial, quiParle);
     }
 
-    // a la fin de ce dialogue, on passe au suivant
+    // a la fin de ce dialogue, on passe au suivant (next step)
     utterance.onend = function (event) {
       console.info('DIAL FINI ' + step);
       step++;
