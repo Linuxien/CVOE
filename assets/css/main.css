@@ -148,3 +148,7 @@ body {
 	top: 17%;
 	left: 50%;
 }
+
+#audio {
+  display: none;
+}
