@@ -57,6 +57,12 @@ body {
     font-size: large;
 }
 
+#tarte {
+	position: absolute;
+	max-width: 10%;
+	top: 33em;
+    left: 25em;
+}
 
 #cactus {
     position: absolute;
@@ -78,6 +84,27 @@ body {
 
 #stick:hover {
     cursor: pointer;
+}
+
+#creme {
+	position: absolute;
+    top: 24em;
+    left: 22em;
+    max-width: 10%;
+}
+
+#sucre {
+	position: absolute;
+    max-width: 10%;
+    top: 9em;
+    left: 15em;
+}
+
+#cacao {
+	position: absolute;
+    max-width: 10%;
+    top: 13em;
+    left: 10em;
 }
 
 #cycler {
