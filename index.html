@@ -96,7 +96,7 @@
       $('.flipbook').bind('turned', function (event, page, view) {
         console.log('Page: ' + page);
 
-        if (page === 6) {
+        if (page === 4) {
           if ($('#cactus').css('display') !== 'none') {
             $(".flipbook").turn("disable", true);
           }
@@ -133,13 +133,13 @@
         //        });
         utterance.voice = window.speechSynthesis.getVoices()[7];
         utterance.lang = "fr-FR";
-//        console.log(window.speechSynthesis.getVoices());
+        //        console.log(window.speechSynthesis.getVoices());
       }
 
       $('#btnStart').on('click', function () {
         speakTrame(0, 0, utterance);
         $(this).hide();
-//                cycleImages();
+        //                cycleImages();
       });
     }
   </script>
