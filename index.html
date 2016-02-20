@@ -179,6 +179,10 @@
 	    if (page === 6) {
         dialPage(4);
 //	    	$('#canvas_clapclap').fadeIn('slow');
+			$('#clapclap').hover(function(){
+				$(this).effect('shake');
+				$(this).css('opacity','1');
+			});
 	    }
       });
     }
