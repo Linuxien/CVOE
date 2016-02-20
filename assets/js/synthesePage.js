@@ -48,20 +48,23 @@ function speakUtterance(utterance) {
 
 // fait parler les autres
 // test si l'audio est découpé en plusieurs parties (merci Gladyss)
-function speakAudio(tabDial, idAudio) {
+function speakAudio(idPage, idDial, tabDial, idAudio) {
   var audio = document.getElementById('audio');
   // chemin du fichier audio
+  var file = tabDial[idAudio].file;
   // texte dit
+  var text = tabDial[idAudio].text;
 
   updateSource(file);
 
-  $(audio).on('ended', function () {
+  audio.addEventListener('ended', function () {
     idAudio++;
     if (idAudio < tabDial.length)
-      speakAudio(tabDial, idAudio);
-    else
-      nextDial();
-
+      speakAudio(idPage, idDial, tabDial, idAudio);
+    else{
+      idDial++;
+      nextDial(idPage, idDial);
+    }
   });
 
   audio.play();
@@ -71,9 +74,8 @@ function speakAudio(tabDial, idAudio) {
 
 function nextDial(idPage, idDial) {
   //  console.log('NEXT DIAL');
-  var pageCrt = pages[id];
+  var pageCrt = pages[idPage];
 
-  // TODO test si idDial est inférieur à la taille
   if (idDial < pageCrt.length) {
     // personne qui parle
     var quiParle = pageCrt[idDial].speaker;
@@ -85,7 +87,7 @@ function nextDial(idPage, idDial) {
 
     // en fonction du type, on lance l'audio ou la parole
     if (type === 'audio') {
-      speakAudio(pageCrt[idDial].dialog, 0);
+      speakAudio(idPage, idDial, pageCrt[idDial].dialog, 0);
 
     } else if (type === 'synthese') {
       // utterance --> si matheo ou emma change de pitch

@@ -20,8 +20,8 @@
   <script type="text/javascript" src="assets/lib/turnjs4/extras/modernizr.2.5.3.min.js"></script>
   <script type="text/javascript" src="assets/lib/turnjs4/lib/hash.js"></script>
   <script type="text/javascript" src="assets/lib/turnjs4/lib/turn.min.js"></script>
-  <script type="text/javascript" src="assets/lib/paper-core.min.js"></script>
-  <script type="text/javascript" src="assets/lib/paper-full.min.js"></script>
+  <!--  <script type="text/javascript" src="assets/lib/paper-core.min.js"></script>-->
+  <!--  <script type="text/javascript" src="assets/lib/paper-full.min.js"></script>-->
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
   <script type="text/javascript" src="assets/js/syntheseTrame.js"></script>
@@ -42,13 +42,11 @@
       <a id="btnStart" href="#">Lire</a>
     </div>
 
-<!--
     <div id="cycler">
       <img class="active" src="assets/trames/trame1.png">
       <img src="assets/trames/trame2.png">
       <img src="assets/trames/trame3.png">
     </div>
--->
 
     <div id="clic_carton"></div>
 
@@ -85,41 +83,41 @@
 
   <script type="text/javascript">
     function cycleImages(idNextTrame) {
-		var $active = $('#cycler .active');
+      var $active = $('#cycler .active');
 
-		// var $next = ($active.next().length > 0) ? $active.next() : $('#cycler img:first');
-		var $next = ($active.next().length > 0) ? $active.next() : $('#cycler').fadeOut();
-		$next.css('z-index', 2); //move the next image up the pile
+      // var $next = ($active.next().length > 0) ? $active.next() : $('#cycler img:first');
+      var $next = ($active.next().length > 0) ? $active.next() : $('#cycler').fadeOut();
+      $next.css('z-index', 2); //move the next image up the pile
 
-		$active.fadeOut(1500, function () { //fade out the top image
-			$active.css('z-index', 1).show().removeClass('active'); //reset the z-index and unhide the image
-			$next.css('z-index', 3).addClass('active'); //make the next image the top one
-			speakTrame(idNextTrame, 0, utterance);
-		});
+      $active.fadeOut(1500, function () { //fade out the top image
+        $active.css('z-index', 1).show().removeClass('active'); //reset the z-index and unhide the image
+        $next.css('z-index', 3).addClass('active'); //make the next image the top one
+        speakTrame(idNextTrame, 0, utterance);
+      });
 
-		if (!($active.next().length > 0)) {
-			$('.flipbook').fadeIn();
-			loadApp();
-		}
+      if (!($active.next().length > 0)) {
+        $('.flipbook').fadeIn();
+        loadApp();
+      }
     }
 
     function loadApp() {
-		$('.flipbook').turn({
-			width: 922,
-			height: 600,
-			elevation: 0,
-			gradients: true,
-			autoCenter: true,
-		});
+      $('.flipbook').turn({
+        width: 922,
+        height: 600,
+        elevation: 0,
+        gradients: true,
+        autoCenter: true,
+      });
 
       $('.flipbook').bind('turned', function (event, page, view) {
         console.log('Page: ' + page);
-        
-        if (page === 2){
+
+        if (page === 2) {
           console.log('PAGE 2, FAIT PETER LES DIALOGUES');
           dialPage(0);
         }
-        
+
         if (page === 4) {
           if ($('#cactus').css('display') !== 'none') {
             $(".flipbook").turn("disable", true);
@@ -138,20 +136,20 @@
       });
     }
 
-    $('#clic_carton').click(function() {
-    	$(this).hide();
-    	cycleImages(2);
+    $('#clic_carton').click(function () {
+      $(this).hide();
+      cycleImages(2);
     });
 
-    $(document).ready(function() {
-    	// setInterval('cycleImages()', 7000);
-    	// loadApp();
+    $(document).ready(function () {
+      // setInterval('cycleImages()', 7000);
+      // loadApp();
     });
 
     function majSubtitles(text, quiParle) {
       $('#sub').text(quiParle + ' : ' + text);
     }
-    
+
     var utterance = new SpeechSynthesisUtterance();
 
     window.onload = function () {
@@ -169,7 +167,7 @@
         $(this).hide();
         //                cycleImages();
       });
-  	}
+    }
   </script>
 </body>
 
