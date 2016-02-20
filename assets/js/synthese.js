@@ -2,6 +2,24 @@
 //[Mathéo] Nous n’avons rien à faire aujourd’hui
 //[Emma] Nous allons rendre visite à l’oncle Ernest, il a toujours de super histoires !
 
+// MATHEO
+// PITCH : 0.5 (float)
+
+// EMMA
+// PITCH : 2 (lol) ou plutot 1.5
+
+// GLADYS
+// PITCH 0.1 ou alors utilisation de meSpeak.js
+
+// perso secondaire --> on peut peut être utilisé des fichiers mp3 pour eux (moins de dialogue)
+// CLAPCLAP (accent pirate)
+
+// BAM
+
+// POULPE
+
+// ONCLE ERNEST
+
 window.onload = function () {
   // TODO si pas de speechsynthesis, on evite de l'utiliser, juste avec les sous titres
   if (!('speechSynthesis' in window)) {
