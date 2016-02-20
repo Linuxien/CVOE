@@ -24,6 +24,7 @@ body {
 }
 
 .flipbook-viewport .flipbook {
+	display: none;
     width: 922px;
     height: 600px;
     left: -461px;
@@ -37,15 +38,6 @@ body {
     background-size: 100% 100%;
 }
 
-
-/*.flipbook .page{
-	-webkit-box-shadow:0 0 20px rgba(0,0,0,0.2);
-	-moz-box-shadow:0 0 20px rgba(0,0,0,0.2);
-	-ms-box-shadow:0 0 20px rgba(0,0,0,0.2);
-	-o-box-shadow:0 0 20px rgba(0,0,0,0.2);
-	box-shadow:0 0 20px rgba(0,0,0,0.2);
-}*/
-
 .flipbook-viewport .page img {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -55,20 +47,6 @@ body {
     user-select: none;
     margin: 0;
 }
-
-
-/*.flipbook-viewport .shadow{
-	-webkit-transition: -webkit-box-shadow 0.5s;
-	-moz-transition: -moz-box-shadow 0.5s;
-	-o-transition: -webkit-box-shadow 0.5s;
-	-ms-transition: -ms-box-shadow 0.5s;
-
-	-webkit-box-shadow:0 0 20px #ccc;
-	-moz-box-shadow:0 0 20px #ccc;
-	-o-box-shadow:0 0 20px #ccc;
-	-ms-box-shadow:0 0 20px #ccc;
-	box-shadow:0 0 20px #ccc;
-}*/
 
 #divsubtitles {
     position: absolute;
@@ -101,18 +79,19 @@ body {
 }
 
 #cycler {
-    position: relative;
+  position: relative;
+  z-index: -1;
 }
 
-#cycler img,
-#cycler div {
-    position: absolute;
-    z-index: 1;
-    box-shadow: 8px 8px 12px #555;
-    max-width: 90%;
-    margin: 10px;
-    border: 5px solid #fff;
-    max-width: 85%;
+#cycler img, #cycler div {
+  position: absolute;
+  z-index: -3;
+
+  box-shadow: 8px 8px 12px #555;
+  max-width: 90%;
+  margin: 10px;
+  border: 5px solid #fff;
+  max-width: 85%;
 }
 
 #story {
@@ -120,11 +99,11 @@ body {
 }
 
 #cycler img.active {
-    z-index: 3;
+  z-index: -2;
 }
 
 #cycler div.active {
-    z-index: 3;
+  z-index: -2;
 }
 
 #menu {
@@ -141,4 +120,25 @@ body {
     border-color: #0275d8;
     border-radius: 2px;
     padding: 0.5em 1em 0.5em 1em;
+}
+
+#clic_carton {
+	position: absolute;
+	top: 70%;
+	left: 32%;
+	background-color: rgba(0,0,0,0);
+	width: 10em;
+	height: 7em;
+	z-index: 3;
+}
+
+#clic_carton:hover {
+	cursor: pointer;
+}
+
+#canvas_clapclap {
+	background-color: white;
+	width: 250px;
+	height: 150px;
+	border: 1px solid black;
 }

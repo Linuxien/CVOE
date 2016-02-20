@@ -124,8 +124,11 @@ function speakTrame(id, step, utterance) {
     window.speechSynthesis.speak(utterance);
   } else {
     // sinon on peut passer à la trame suivante
-    console.info('NEXT TRAME');
-    cycleImages(id + 1);
+
+    if (id !== 1) {
+      console.info('NEXT TRAME');
+      cycleImages(id + 1);
+    }
   }
 
 
