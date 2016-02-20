@@ -20,6 +20,8 @@
   <script type="text/javascript" src="assets/lib/turnjs4/extras/modernizr.2.5.3.min.js"></script>
   <script type="text/javascript" src="assets/lib/turnjs4/lib/hash.js"></script>
   <script type="text/javascript" src="assets/lib/turnjs4/lib/turn.min.js"></script>
+  <script type="text/javascript" src="assets/lib/paper-core.min.js"></script>
+  <script type="text/javascript" src="assets/lib/paper-full.min.js"></script>
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
   <script type="text/javascript" src="assets/js/synthese.js"></script>
@@ -33,12 +35,14 @@
 		<div id="menu">
 		 	<a id="btnStart" href="#">Lire</a>
 		</div>
-
+			
 		  <div id="cycler">
 		    <img class="active" src="assets/trames/trame1.png">
 		    <img src="assets/trames/trame2.png">
 		    <img src="assets/trames/trame3.png">
 		  </div>
+
+		  <div id="clic_carton"></div>
 
 		  <div class="flipbook-viewport">
 		    <div class="container">
@@ -55,7 +59,9 @@
 		          <img id="stick" class="ui-widget-content" src="assets/pages/page_2/stick.png">
 		        </div>
 		        <div style="background-image:url(assets/pages/page_3/page3.1.png)"></div>
-		        <div style="background-image:url(assets/pages/page_3/page3.2.png)"></div>
+		        <div style="background-image:url(assets/pages/page_3/page3.2.png)">
+		        	
+		        </div>
 		        <div style="background-image:url(assets/pages/page_4/page4.1.png)"></div>
 		        <div style="background-image:url(assets/pages/page_4/page4.2.png)"></div>
 		        <div style="background-image:url(assets/pages/page_5/page5.1.png)"></div>
@@ -63,6 +69,8 @@
 		      </div>
 		    </div>
 		  </div>
+
+		  <!-- <canvas id="canvas_clapclap"></canvas> -->
 
 		<div id="divsubtitles">
 			<p id="sub">test</p>
@@ -86,13 +94,13 @@
     }
 
     function loadApp() {
-      $('.flipbook').turn({
-        width: 922,
-        height: 600,
-        elevation: 0,
-        gradients: true,
-        autoCenter: true,
-      });
+		$('.flipbook').turn({
+			width: 922,
+			height: 600,
+			elevation: 0,
+			gradients: true,
+			autoCenter: true,
+		});
 
       $('.flipbook').bind('turned', function (event, page, view) {
         console.log('Page: ' + page);
@@ -100,20 +108,25 @@
         if (page === 6) {
         	if ($('#cactus').css('display') !== 'none') {
         		$(".flipbook").turn("disable", true);
+
+        		$('#stick').draggable();
+
+        		$('#cactus').droppable({
+        			drop: function (event, ui) {
+        				$(this).fadeOut();
+        				$('#stick').fadeOut();
+        				$(".flipbook").turn("disable", false);
+        			}
+        		});
         	}
-
-			$('#stick').draggable();
-
-			$('#cactus').droppable({
-				drop: function (event, ui) {
-					$(this).fadeOut();
-					$('#stick').fadeOut();
-					$(".flipbook").turn("disable", false);
-				}
-			});
         }
       });
     }
+
+    $('#clic_carton').click(function() {
+    	cycleImages();
+    	$(this).hide();
+    });
 
     $(document).ready(function() {
     	// setInterval('cycleImages()', 7000);
@@ -136,8 +149,7 @@
         speakTrame(0, 0, utterance);
         cycleImages();
       });
-  }
-      
+  	}
   </script>
 </body>
 
