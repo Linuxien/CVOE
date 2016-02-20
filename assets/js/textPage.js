@@ -327,6 +327,9 @@ var page6_3 = [
 //1 : page2_1 --> arrivé dans le desert
 //2: page2_2 --> lancé quand on clique sur le livre (pour essayer de tourner la apge)
 //3: page2_3 --> lancé après avoir tapé le cactus
+//4: page3_1 --> arrivé plage
+//5: page3_2 --> clic sur clapclap
+//6: page3_3 --> validation canvas de sa coquille
 
 var pages = [
   page1,
