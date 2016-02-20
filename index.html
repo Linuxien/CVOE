@@ -180,7 +180,11 @@
         $(".flipbook").turn("disable", true);
         
         dialPage(4);
-        //	    	$('#canvas_clapclap').fadeIn('slow');
+  //	    	$('#canvas_clapclap').fadeIn('slow');
+        $('#clapclap').hover(function(){
+          $(this).effect('shake');
+          $(this).css('opacity','1');
+        });
 	    }
         
       if(page === 8){

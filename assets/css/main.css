@@ -183,11 +183,11 @@ body {
   left: 4em;
 }
 
-#clapclap:hover {
-  opacity: 1;
-  cursor: pointer;
-}
-
 #audio {
   display: none;
+}
+
+#clapclap:hover {
+	opacity: 1;
+  	cursor: pointer;
 }
