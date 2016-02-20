@@ -2,6 +2,15 @@
 //[Mathéo] Nous n’avons rien à faire aujourd’hui
 //[Emma] Nous allons rendre visite à l’oncle Ernest, il a toujours de super histoires !
 
+// TRAME 2
+//[Matheo] Tiens, l’oncle Ernest ne répond pas
+//[Emma] Il n’est pas là ! 
+//[Mathéo] Regarde, c’est quoi ce livre ? Allons le voir ! 
+//[Emma] C’est une mauvaise idée, rentrons !
+
+//TRAME 3
+// [les 2] OUAAHHH
+
 // MATHEO
 // PITCH : 0.5 (float)
 
@@ -40,6 +49,24 @@ var trame1 = [
 
 var trame2 = [
   {
+    'speaker': "matheo",
+    'dialog': "Tiens, l’oncle Ernest ne répond pas"
+  },
+  {
+    'speaker': "emma",
+    'dialog': "Il n’est pas là ! "
+  },
+  {
+    'speaker': "matheo",
+    'dialog': "Regarde, c’est quoi ce livre ? Allons le voir !"
+  },
+  {
+    'speaker': "emma",
+    'dialog': "C’est une mauvaise idée, rentrons !"
+  }
+]
+var trame3 = [
+  {
     'speaker': "test",
     'dialog': "dialog"
   }
@@ -47,7 +74,8 @@ var trame2 = [
 
 var trames = [
   trame1,
-  trame2
+  trame2,
+  trame3
 ]
 
 
@@ -55,6 +83,9 @@ function speakTrame(id, step, utterance) {
   var trameCrt = trames[id];
   console.log('TrameCrt : ' + trameCrt);
 
+  // si pas de trame crt alors on arrete tout
+  // if trameCrt undefined
+    
   var nbtext = trameCrt.length;
   console.info('Taille trameCrt : ' + nbtext);
 
@@ -83,6 +114,7 @@ function speakTrame(id, step, utterance) {
   } else {
     // sinon on peut passer à la trame suivante
     console.info('NEXT TRAME');
+    cycleImages(id + 1);
   }
 
 

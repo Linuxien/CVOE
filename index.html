@@ -22,57 +22,57 @@
   <script type="text/javascript" src="assets/lib/turnjs4/lib/turn.min.js"></script>
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
-  <script type="text/javascript" src="assets/js/synthese.js"></script>
+  <script type="text/javascript" src="assets/js/syntheseTrame.js"></script>
 
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
 
 <body>
-	
-	<div id="story">
-		<div id="menu">
-		 	<a id="btnStart" href="#">Lire</a>
-		</div>
 
-		  <div id="cycler">
-		    <img class="active" src="assets/trames/trame1.png">
-		    <img src="assets/trames/trame2.png">
-		    <img src="assets/trames/trame3.png">
-		  </div>
+  <div id="story">
+    <div id="menu">
+      <a id="btnStart" href="#">Lire</a>
+    </div>
 
-		  <div class="flipbook-viewport">
-		    <div class="container">
-		      <div class="flipbook">
-		        <div style="background-image:url(assets/bookCover.png)"></div>
-		        <div style="background-image:url(assets/bookBackground1.png)"></div>
-		        <div style="background-image:url(assets/bookBackground2.png)"></div>
-		        <div style="background-image:url(assets/pages/page_1/page1.1.png)"></div>
-		        <div style="background-image:url(assets/pages/page_1/page1.2.png)"></div>
-		        <div style="background-image:url(assets/pages/page_2/page2.1.png)"></div>
-		        <div style="background-image:url(assets/pages/page_2/page2.2.png)">
-		          <img id="cactus" class="ui-widget-content" src="assets/pages/page_2/cactus1.png">
-		          <img id="cactus_coupe" src="assets/pages/page_2/cactus2.png">
-		          <img id="stick" class="ui-widget-content" src="assets/pages/page_2/stick.png">
-		        </div>
-		        <div style="background-image:url(assets/pages/page_3/page3.1.png)"></div>
-		        <div style="background-image:url(assets/pages/page_3/page3.2.png)"></div>
-		        <div style="background-image:url(assets/pages/page_4/page4.1.png)"></div>
-		        <div style="background-image:url(assets/pages/page_4/page4.2.png)"></div>
-		        <div style="background-image:url(assets/pages/page_5/page5.1.png)"></div>
-		        <div style="background-image:url(assets/pages/page_5/page5.2.png)"></div>
-		      </div>
-		    </div>
-		  </div>
+    <div id="cycler">
+      <img class="active" src="assets/trames/trame1.png">
+      <img src="assets/trames/trame2.png">
+      <img src="assets/trames/trame3.png">
+    </div>
 
-		<div id="divsubtitles">
-			<p id="sub">test</p>
-		</div>
-	</div>
-	
+    <div class="flipbook-viewport">
+      <div class="container">
+        <div class="flipbook">
+          <div style="background-image:url(assets/bookCover.png)"></div>
+          <div style="background-image:url(assets/bookBackground1.png)"></div>
+          <div style="background-image:url(assets/bookBackground2.png)"></div>
+          <div style="background-image:url(assets/pages/page_1/page1.1.png)"></div>
+          <div style="background-image:url(assets/pages/page_1/page1.2.png)"></div>
+          <div style="background-image:url(assets/pages/page_2/page2.1.png)"></div>
+          <div style="background-image:url(assets/pages/page_2/page2.2.png)">
+            <img id="cactus" class="ui-widget-content" src="assets/pages/page_2/cactus1.png">
+            <img id="cactus_coupe" src="assets/pages/page_2/cactus2.png">
+            <img id="stick" class="ui-widget-content" src="assets/pages/page_2/stick.png">
+          </div>
+          <div style="background-image:url(assets/pages/page_3/page3.1.png)"></div>
+          <div style="background-image:url(assets/pages/page_3/page3.2.png)"></div>
+          <div style="background-image:url(assets/pages/page_4/page4.1.png)"></div>
+          <div style="background-image:url(assets/pages/page_4/page4.2.png)"></div>
+          <div style="background-image:url(assets/pages/page_5/page5.1.png)"></div>
+          <div style="background-image:url(assets/pages/page_5/page5.2.png)"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="divsubtitles">
+      <p id="sub">test</p>
+    </div>
+  </div>
+
   <script type="text/javascript" src="assets/js/basic.js"></script>
 
   <script type="text/javascript">
-    function cycleImages() {
+    function cycleImages(idNextTrame) {
       var $active = $('#cycler .active');
 
       // var $next = ($active.next().length > 0) ? $active.next() : $('#cycler img:first');
@@ -82,6 +82,7 @@
       $active.fadeOut(1500, function () { //fade out the top image
         $active.css('z-index', 1).show().removeClass('active'); //reset the z-index and unhide the image
         $next.css('z-index', 3).addClass('active'); //make the next image the top one
+        speakTrame(idNextTrame, 0, utterance);
       });
     }
 
@@ -96,36 +97,36 @@
 
       $('.flipbook').bind('turned', function (event, page, view) {
         console.log('Page: ' + page);
-        
+
         if (page === 6) {
-        	if ($('#cactus').css('display') !== 'none') {
-        		$(".flipbook").turn("disable", true);
-        	}
+          if ($('#cactus').css('display') !== 'none') {
+            $(".flipbook").turn("disable", true);
+          }
 
-			$('#stick').draggable();
+          $('#stick').draggable();
 
-			$('#cactus').droppable({
-				drop: function (event, ui) {
-					$(this).fadeOut();
-					$('#stick').fadeOut();
-					$(".flipbook").turn("disable", false);
-				}
-			});
+          $('#cactus').droppable({
+            drop: function (event, ui) {
+              $(this).fadeOut();
+              $('#stick').fadeOut();
+              $(".flipbook").turn("disable", false);
+            }
+          });
         }
       });
     }
 
-    $(document).ready(function() {
-    	// setInterval('cycleImages()', 7000);
-    	loadApp();
+    $(document).ready(function () {
+      // setInterval('cycleImages()', 7000);
+      loadApp();
     });
 
     function majSubtitles(text, quiParle) {
       $('#sub').text(quiParle + ' : ' + text);
     }
 
+    var utterance = new SpeechSynthesisUtterance();
     window.onload = function () {
-      var utterance = new SpeechSynthesisUtterance();
 
       window.speechSynthesis.onvoiceschanged = function () {
         // affiche les voix dispo de Google
@@ -139,10 +140,9 @@
 
       $('#btnStart').on('click', function () {
         speakTrame(0, 0, utterance);
-        cycleImages();
+        //        cycleImages();
       });
-  }
-      
+    }
   </script>
 </body>
 
