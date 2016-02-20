@@ -93,6 +93,20 @@ body {
     max-width: 10%;
 }
 
+#sucre {
+	position: absolute;
+    max-width: 10%;
+    top: 9em;
+    left: 15em;
+}
+
+#cacao {
+	position: absolute;
+    max-width: 10%;
+    top: 13em;
+    left: 10em;
+}
+
 #cycler {
   position: relative;
   z-index: -1;
