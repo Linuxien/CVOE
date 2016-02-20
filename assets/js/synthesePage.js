@@ -75,8 +75,6 @@ function speakAudio(idPage, idDial, tabDial, idAudio, quiParle) {
 function nextDial(idPage, idDial) {
   //  console.log('NEXT DIAL');
   var pageCrt = pages[idPage];
-  console.info('TEST : ' + idDial);
-  console.log('NB : ' + pageCrt.length);
   if (idDial < pageCrt.length) {
     // personne qui parle
     var quiParle = pageCrt[idDial].speaker;
@@ -97,13 +95,19 @@ function nextDial(idPage, idDial) {
     }
 
     // MAJ sous titres onstart
+  } else if (idPage === 0){
+    // seulement pour la premiere page
+    $(".flipbook").turn("disable", false);
   }
 }
 
 // lance les dialogues
 function dialPage(id) {
-  //  var pageCrt = pages[id];
-
+  // seulement pour la premiere page
+  if(id === 0){
+    $(".flipbook").turn("disable", true);
+  }
+  
   nextDial(id, 0);
 
 }
