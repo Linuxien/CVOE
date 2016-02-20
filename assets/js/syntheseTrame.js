@@ -67,8 +67,8 @@ var trame2 = [
 ]
 var trame3 = [
   {
-    'speaker': "test",
-    'dialog': "dialog"
+    'speaker': "emma matheo",
+    'dialog': "ouaaaaaah"
   }
 ]
 
@@ -95,7 +95,7 @@ function speakTrame(id, step, utterance) {
     var quiParle = trameCrt[step].speaker;
     var dial = trameCrt[step].dialog;
     
-    // on modifie l'utterance pour la voix
+    // on modifie le pitch des voix des enfants
     if(quiParle === 'matheo'){
       utterance.pitch = 0.5;
     } else if (quiParle === 'emma'){
