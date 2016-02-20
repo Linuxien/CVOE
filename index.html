@@ -117,13 +117,22 @@
         console.log('Page: ' + page);
 
         if (page === 2) {
-          console.log('PAGE 2, FAIT PETER LES DIALOGUES');
+          // TODO modif ajout attribut pour ne pas repet les dial
           dialPage(0);
         }
 
         if (page === 4) {
+          // premiere partie du dialogue de la page 2
+          dialPage(1);
+          
           if ($('#cactus').css('display') !== 'none') {
             $(".flipbook").turn("disable", true);
+            
+            // on clique sur le livre
+            $(".flipbook").on('click', function(){
+              dialPage(2);
+              $(this).off('click');
+            });
 
             $('#stick').draggable();
 
@@ -132,6 +141,7 @@
                 $(this).fadeOut();
                 $('#stick').fadeOut();
                 $(".flipbook").turn("disable", false);
+                dialPage(3);
               }
             });
           }

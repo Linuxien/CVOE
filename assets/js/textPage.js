@@ -129,7 +129,7 @@ var page2_2 = [
     'type': 'audio',
     'dialog': [{
       'file': 'assets/pages/page_2/Gladys_2.mp3',
-      'text': 'Miraculeux ! Vous en avez aussi le pouvoir ! Par contre… Il faudra que vous appreniez un peu à le maitriser… Voyez-vous, Cet endroit ne me plait pas…'
+      'text': 'C’est normal, si on veut pouvoir traverser ce désert, il va nous falloir de l’eau ! Peux-tu en trouver dans cette page ?'
     }, {
       'file': 'assets/audio/BIP3.mp3',
       'text': 'BIP'
@@ -138,7 +138,7 @@ var page2_2 = [
   {
     'speaker': 'Emma',
     'type': 'synthese',
-    'dialog': "Mathéo ! On doit sauver l’Oncle Ernest ! Tournons la page !"
+    'dialog': "Regarde, il y a un cactus, essayons de trouver quelque chose pour récupérer l’eau qu’il contient !"
   }
 ]
 
@@ -153,7 +153,15 @@ var page2_3 = [
   }
 ]
 
+//dialPage(X) avec X :
+//0 : page1,
+//1 : page2_1
+//2: page2_2
+//3: page2_3
 
 var pages = [
-  page1
+  page1,
+  page2_1,
+  page2_2,
+  page2_3
 ]

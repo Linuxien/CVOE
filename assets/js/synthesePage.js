@@ -102,6 +102,7 @@ function nextDial(idPage, idDial) {
 }
 
 // lance les dialogues
+// TODO ajout attr pour ne pas repet les dial
 function dialPage(id) {
   // seulement pour la premiere page
   if(id === 0){

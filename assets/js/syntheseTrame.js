@@ -17,9 +17,6 @@
 // EMMA
 // PITCH : 2 (lol) ou plutot 1.5
 
-// GLADYS
-// PITCH 0.1 ou alors utilisation de meSpeak.js
-
 // perso secondaire --> on peut peut être utilisé des fichiers mp3 pour eux (moins de dialogue)
 // CLAPCLAP (accent pirate)
 
