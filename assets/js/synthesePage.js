@@ -106,7 +106,6 @@ function nextDial(idPage, idDial) {
       $(this).off('click');
     });
   } else if (idPage === 4) {
-    // TODO event sur clapclap
     $('#clapclap').on('click', function () {
       $(this).css('opacity', 1);
       dialPage(5);
@@ -123,6 +122,14 @@ function nextDial(idPage, idDial) {
     });
   } else if (idPage === 6){
       $(".flipbook").turn("disable", false);
+  } else if (idPage === 7){
+    // on fait apparaitre BAM et son appareil
+    $('#bam').show('clip');
+    $('#petitApp').show('clip');
+    dialPage(8);
+  } else if (idPage === 8){
+    // on fait appel au script du souffle dans le micro
+    launchMicro();
   }
 }
 

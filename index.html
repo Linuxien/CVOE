@@ -30,6 +30,9 @@
   <script type="text/javascript" src="assets/js/syntheseTrame.js"></script>
   <script type="text/javascript" src="assets/js/synthesePage.js"></script>
 
+  <script type="text/javascript" src="assets/js/soufflePoussiere.js"></script>
+  <script type="application/javascript" src="assets/lib/volume-meter.js"></script>
+  
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
 
@@ -58,30 +61,46 @@
         <div class="flipbook">
           <div style="background-image:url(assets/bookCover.png)"></div>
           <div style="background-image:url(assets/pages/page_1/page1.1.png)"></div>
+          
           <div style="background-image:url(assets/pages/page_1/page1.2.png)"></div>
+          
           <div style="background-image:url(assets/pages/page_2/page2.1.png)">
           	<img id="tarte" src="assets/pages/page_2/tarte.png">
           </div>
+          
           <div style="background-image:url(assets/pages/page_2/page2.2.png)">
             <img id="cactus" class="ui-widget-content" src="assets/pages/page_2/cactus1.png">
             <img id="cactus_coupe" src="assets/pages/page_2/cactus2.png">
             <img id="stick" class="ui-widget-content" src="assets/pages/page_2/stick.png">
           </div>
+          
           <div style="background-image:url(assets/pages/page_3/page3.1.png)"></div>
+          
           <div style="background-image:url(assets/pages/page_3/page3.2.png)">
             <img id="clapclap" src="assets/pages/page_3/clapclap.png">
           	<img id="creme" src="assets/pages/page_3/creme.png">
           </div>
+          
           <div style="background-image:url(assets/pages/page_4/page4.1.png)">
           	<img id="sucre" src="assets/pages/page_4/sucre.png">
           </div>
-          <div style="background-image:url(assets/pages/page_4/page4.2.png)"></div>
+          
+          <div style="background-image:url(assets/pages/page_4/page4.2.png)">
+            <img id="bam" src="assets/pages/page_4/BAM.png">
+            <img id="petitApp" src="assets/pages/page_4/petitApp2.png">
+            <canvas id="appareil" width="200" height="300"></canvas>
+          </div>
+          
           <div style="background-image:url(assets/pages/page_5/page5.1.png)">
           	<img id="cacao" src="assets/pages/page_5/cacao.png">
           </div>
+          
           <div style="background-image:url(assets/pages/page_5/page5.2.png)"></div>
+          
           <div style="background-image:url(assets/pages/page_6/page6.1.png)"></div>
+          
           <div style="background-image:url(assets/pages/page_6/page6.2.png)"></div>
+          
         </div>
       </div>
     </div>
@@ -189,6 +208,9 @@
         
       if(page === 8){
         $('#canvas_clapclap').fadeOut('slow');
+        $(".flipbook").turn("disable", true);
+        
+        dialPage(7);
       }
       });
     }

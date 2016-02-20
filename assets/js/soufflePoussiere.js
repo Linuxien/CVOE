@@ -8,7 +8,7 @@ var isBusy = false;
 var img1 = new Image();
 var img2 = new Image();
 
-window.onload = function () {
+function launchMicro() {
 
   // monkeypatch Web Audio
   window.AudioContext = window.AudioContext || window.webkitAudioContext;
@@ -61,13 +61,13 @@ function gotStream(stream) {
   meter = createAudioMeter(audioContext);
   mediaStreamSource.connect(meter);
 
-  img1.src = 'appareil1.png';
+  img1.src = 'assets/pages/page_4/appareil1.png';
   img1.onload = function () {
-    layerCtx.drawImage(img1, 0, 0);
+    layerCtx.drawImage(img1, 0, 0, 200, 300);
   }
-  img2.src = 'appareil2.png';
+  img2.src = 'assets/pages/page_4/appareil2.png';
   img2.onload = function () {
-    layerCtx.drawImage(img2, 0, 0);
+    layerCtx.drawImage(img2, 0, 0, 200, 300);
   }
 
   // kick off the visual updating
@@ -88,16 +88,26 @@ function drawLoop(time) {
     (function fadeIn() {
       layerCtx.globalAlpha = opacity;
       layerCtx.drawImage(img1, 0, 0, layerCtx.canvas.width, layerCtx.canvas.height);
-      opacity += 0.001;
-      if (opacity < 1)
+      opacity += 0.01;
+      if (opacity < 1){
         requestAnimationFrame(fadeIn);
-      else
+      }
+      else{
+        console.info('FINI fadein');
         isBusy = false;
-    })();
 
-    // on coupe le micro (?)
-    meter.shutdown();
-    audioContext.close()
+        // on coupe le micro (?)
+        meter.shutdown();
+        audioContext.close();
+
+        // on fait les changements necessaire
+        $('#petitApp').attr("src", "assets/pages/page_4/petitApp.png");
+        // on passe au prochaine dialogue
+        dialPage(9);
+        // on enleve le canvas
+        $('#appareil').hide('size');
+      }
+    })();
   } else {
     // set up the next visual callback
     rafID = window.requestAnimationFrame(drawLoop);

@@ -1,4 +1,4 @@
-window.onload = function () {
+function photoAvecBam () {
 
   var videoInput = document.getElementById('vid');
   var canvasInput = document.getElementById('compare');
