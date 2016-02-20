@@ -86,6 +86,74 @@ var page1 = [
   }
 ]
 
+// PAGE 2 - 1
+//[Gladyss] Miraculeux ! Vous en avez aussi le pouvoir ! Par contre… Il faudra que vous appreniez un peu à le maitriser… Voyez-vous, Cet endroit ne me plait pas… BIP.
+//[Mathéo] Hey, si ça ne te plait pas débrouille-toi !
+//[Emma] Mathéo ! On doit sauver l’Oncle Ernest ! Tournons la page !
+var page2_1 = [
+  {
+    'speaker': 'Gladyss',
+    'type': 'audio',
+    'dialog': [{
+      'file': 'assets/pages/page_2/Gladys_1.mp3',
+      'text': 'Miraculeux ! Vous en avez aussi le pouvoir ! Par contre… Il faudra que vous appreniez un peu à le maitriser… Voyez-vous, Cet endroit ne me plait pas…'
+    }, {
+      'file': 'assets/audio/BIP3.mp3',
+      'text': 'BIP'
+    }]
+  },
+  {
+    'speaker': 'Matheo',
+    'type': 'synthese',
+    'dialog': "Hey, si ça ne te plait pas débrouille-toi !"
+  },
+  {
+    'speaker': 'Emma',
+    'type': 'synthese',
+    'dialog': "Mathéo ! On doit sauver l’Oncle Ernest ! Tournons la page !"
+  }
+]
+// PAGE 2-2
+//# Le joueur essaie de tourner la page mais n’y arrive pas #
+//[Mathéo] Ca ne marche plus !
+//[Gladyss] C’est normal, si on veut pouvoir traverser ce désert, il va nous falloir de l’eau ! Peux-tu en trouver dans cette page ?
+//[Emma] Regarde, il y a un cactus, essayons de trouver quelque chose pour récupérer l’eau qu’il contient !
+var page2_2 = [
+  {
+    'speaker': 'Matheo',
+    'type': 'synthese',
+    'dialog': "Ça ne marche plus !"
+  },
+  {
+    'speaker': 'Gladyss',
+    'type': 'audio',
+    'dialog': [{
+      'file': 'assets/pages/page_2/Gladys_2.mp3',
+      'text': 'Miraculeux ! Vous en avez aussi le pouvoir ! Par contre… Il faudra que vous appreniez un peu à le maitriser… Voyez-vous, Cet endroit ne me plait pas…'
+    }, {
+      'file': 'assets/audio/BIP3.mp3',
+      'text': 'BIP'
+    }]
+  },
+  {
+    'speaker': 'Emma',
+    'type': 'synthese',
+    'dialog': "Mathéo ! On doit sauver l’Oncle Ernest ! Tournons la page !"
+  }
+]
+
+// PAGE 2-3
+//# Le joueur clique sur un baton, et l’amène sur le cactus #
+//[Mathéo] Génial ! Essayons de tourner la page, maintenant.
+var page2_3 = [
+  {
+    'speaker': 'Matheo',
+    'type': 'synthese',
+    'dialog': "Génial ! Essayons de tourner la page, maintenant."
+  }
+]
+
+
 var pages = [
   page1
 ]
