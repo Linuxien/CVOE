@@ -34,11 +34,11 @@
 		 	<a id="btnStart" href="#">Lire</a>
 		</div>
 
-		  <div id="cycler">
+		  <!-- <div id="cycler">
 		    <img class="active" src="assets/trames/trame1.png">
 		    <img src="assets/trames/trame2.png">
 		    <img src="assets/trames/trame3.png">
-		  </div>
+		  </div> -->
 
 		  <div class="flipbook-viewport">
 		    <div class="container">
@@ -98,7 +98,9 @@
         console.log('Page: ' + page);
         
         if (page === 6) {
-        	$(".flipbook").turn("disable", true);
+        	if ($('#cactus').css('display') !== 'none') {
+        		$(".flipbook").turn("disable", true);
+        	}
 
 			$('#stick').draggable();
 
