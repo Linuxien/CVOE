@@ -1,10 +1,13 @@
 /* Basic sample */
 
+* {
+	margin: 0;
+	padding: 0;
+}
+
 body {
   overflow: hidden;
   background-color: #fcfcfc;
-  margin: 0;
-  padding: 0;
 }
 
 .flipbook-viewport {
@@ -102,6 +105,16 @@ body {
 #cycler img, #cycler div {
   position: absolute;
   z-index: 1;
+
+  box-shadow: 8px 8px 12px #555;
+  max-width: 90%;
+  margin: 10px;
+  border: 5px solid #fff;
+  max-width: 85%;
+}
+
+#story {
+	margin-left: 7em;
 }
 
 #cycler img.active {
@@ -113,11 +126,17 @@ body {
 }
 
 #menu {
-  background-color: black;
-  /*  margin-top: 25%;*/
-  left: 50%;
+	margin-top: 1.5em;
+	margin-bottom: 1em;
+	text-align: center;
 }
 
-#btnStart {
-  padding: 25%;
+#menu a {
+	text-decoration: none;
+	cursor: pointer;
+	color: #fff;
+    background-color: #0275d8;
+    border-color: #0275d8;
+    border-radius: 2px;
+    padding: 0.5em 1em 0.5em 1em;
 }
