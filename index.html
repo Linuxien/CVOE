@@ -177,9 +177,15 @@
         }
 
 	    if (page === 6) {
+        $(".flipbook").turn("disable", true);
+        
         dialPage(4);
-//	    	$('#canvas_clapclap').fadeIn('slow');
+        //	    	$('#canvas_clapclap').fadeIn('slow');
 	    }
+        
+      if(page === 8){
+        $('#canvas_clapclap').fadeOut('slow');
+      }
       });
     }
 

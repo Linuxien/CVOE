@@ -105,17 +105,24 @@ function nextDial(idPage, idDial) {
       dialPage(2);
       $(this).off('click');
     });
-  } else if (idPage === 4){
+  } else if (idPage === 4) {
     // TODO event sur clapclap
-    $('#clapclap').on('click', function (){
+    $('#clapclap').on('click', function () {
       $(this).css('opacity', 1);
       dialPage(5);
       $(this).off('click');
     });
-  } else if (idPage === 5){
+  } else if (idPage === 5) {
     // on fait apparaitre le canvas
     $('#canvas_clapclap').fadeIn('slow');
     $('#btnStart').html('Valider le dessin !').fadeIn();
+    $('#btnStart').on('click', function () {
+      dialPage(6);
+      $(this).off('click');
+      $(this).hide();
+    });
+  } else if (idPage === 6){
+      $(".flipbook").turn("disable", false);
   }
 }
 
@@ -126,9 +133,9 @@ function dialPage(id) {
   if (id === 0) {
     $(".flipbook").turn("disable", true);
   }
-  
+
   console.log('DIAL PAGE : ' + id);
-  
+
   nextDial(id, 0);
 
 }
