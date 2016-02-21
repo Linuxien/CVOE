@@ -31,6 +31,9 @@
   <script type="text/javascript" src="assets/js/synthesePage.js"></script>
 
   <script type="text/javascript" src="assets/js/soufflePoussiere.js"></script>
+  
+  <script type="application/javascript" src="assets/lib/headtrackr.min.js"></script>
+  <script type="text/javascript" src="assets/js/photoBAM.js"></script>
   <script type="application/javascript" src="assets/lib/volume-meter.js"></script>
   
   <link rel="stylesheet" href="assets/css/main.css">
@@ -89,6 +92,14 @@
             <img id="bam" src="assets/pages/page_4/BAM.png">
             <img id="petitApp" src="assets/pages/page_4/petitApp2.png">
             <canvas id="appareil" width="200" height="300"></canvas>
+            <canvas id="compare" width="320" height="240" style="display:none"></canvas>
+            <video id="vid" autoplay loop width="320" height="240"></video>
+            <canvas id="overlay" width="320" height="240"></canvas>
+            <canvas id="snapshot" width="320" height="240"></canvas>
+            <br/>
+            <button id="snapshot_btn">SNAPSHOT</button>
+            <img id="mask" src="assets/pages/page_4/helmet.png" style="display:none;">
+            <img id="bam" src="assets/pages/page_4/BAM.png" style="display:none;">
           </div>
           
           <div style="background-image:url(assets/pages/page_5/page5.1.png)">

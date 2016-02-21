@@ -210,3 +210,13 @@ body {
   left: 12em;
   top: 3em;
 }
+
+#vid, #snapshot{
+  position: absolute;
+  top: 5em;
+  left: 5em;
+}
+
+#snapshot_btn {
+  display: none;
+}

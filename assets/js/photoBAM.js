@@ -18,7 +18,8 @@ function photoAvecBam () {
   var localMediaStream = null;
 
   canvasOverlay.style.position = "absolute";
-  canvasOverlay.style.top = '0px';
+  canvasOverlay.style.top = '5em';
+  canvasOverlay.style.left = '5em';
   canvasOverlay.style.zIndex = '100001';
   canvasOverlay.style.display = 'block';
 
@@ -62,12 +63,15 @@ function photoAvecBam () {
       snapshotContext.drawImage(canvasOverlay, 0, 0, 320, 240);
 
       htracker.stop();
-      htracker.stopStream();
+//      htracker.stopStream();
       localMediaStream.getTracks()[0].stop();
       
       canvasOverlay.remove();
       videoInput.remove();
       snapshot_btn.remove();
+      
+      // on passe au dial suivant
+      dialPage(10);
     }
   });
 

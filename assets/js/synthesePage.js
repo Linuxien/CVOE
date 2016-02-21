@@ -120,16 +120,28 @@ function nextDial(idPage, idDial) {
       $(this).off('click');
       $(this).hide();
     });
-  } else if (idPage === 6){
-      $(".flipbook").turn("disable", false);
-  } else if (idPage === 7){
+  } else if (idPage === 6) {
+    $(".flipbook").turn("disable", false);
+  } else if (idPage === 7) {
     // on fait apparaitre BAM et son appareil
     $('#bam').show('clip');
     $('#petitApp').show('clip');
     dialPage(8);
-  } else if (idPage === 8){
+  } else if (idPage === 8) {
     // on fait appel au script du souffle dans le micro
     launchMicro();
+  } else if (idPage === 9) {
+    // on lance la cam
+    photoAvecBam();
+    // on fait disparaitre BAM parceu'il apparait sur la photo
+    $('#bam').hide('clip');
+    
+    // on fait apparaitre le bouton pour prendre snaphsot
+    $('#snapshot_btn').show();
+  } else if (idPage === 10) {
+    
+    $('#bam').show('clip');
+    $(".flipbook").turn("disable", false);
   }
 }
 

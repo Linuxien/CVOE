@@ -294,22 +294,22 @@ var page4_1 = [
 //[Bam] Salut ! Je suis Bam l’extraterrestre ! Vous êtes des humains ? C’est la première fois que j’en vois, j’aimerais prendre une photo !
 //[Emma] Ouais une photo ! Mais ton appareil photo est tout poussiereux, il faudrait souffler dessus avant !
 var page4_1bis = [
-  {
-    'speaker': 'Bam',
-    'type': 'audio',
-    'dialog': [{
-      'file': 'assets/pages/page_4/Bam_1.mp3',
-      'text': 'Salut ! Je suis Bam l’extraterrestre !'
-    }, {
-      'file': 'assets/pages/page_4/Bam_2.mp3',
-      'text': 'Vous êtes des humains ? C’est la première fois que j’en vois, j’aimerais prendre une photo !'
-    }]
-  },
-  {
-    'speaker': 'Emma',
-    'type': 'synthese',
-    'dialog': "Ouais une photo ! Mais ton appareil photo est tout poussiereux, il faudrait souffler dessus avant !"
-  }
+//  {
+//    'speaker': 'Bam',
+//    'type': 'audio',
+//    'dialog': [{
+//      'file': 'assets/pages/page_4/Bam_1.mp3',
+//      'text': 'Salut ! Je suis Bam l’extraterrestre !'
+//    }, {
+//      'file': 'assets/pages/page_4/Bam_2.mp3',
+//      'text': 'Vous êtes des humains ? C’est la première fois que j’en vois, j’aimerais prendre une photo !'
+//    }]
+//  },
+//  {
+//    'speaker': 'Emma',
+//    'type': 'synthese',
+//    'dialog': "Ouais une photo ! Mais ton appareil photo est tout poussiereux, il faudrait souffler dessus avant !"
+//  }
 ]
 
 // PAGE 4-2 Apres souffle dans le micro
@@ -328,13 +328,21 @@ var page4_2 = [
 // PAGE 4-3 Apres prise de la phot
 //[Bam] Merci ! Je vais vous aider à quitter la lune !
 var page4_3 = [
-
+  {
+    'speaker': 'Bam',
+    'type': 'audio',
+    'dialog': [{
+      'file': 'assets/pages/page_4/Bam_3.mp3',
+      'text': 'Merci ! Je vais vous aider à quitter la lune !'
+    }]
+  }
 ]
-  // PAGE 5-1 - Arrivé dans la jungle
-  //[Mathéo] Nous voilà maintenant dans la jungle !
-  //[Emma] Regarde ! Gladyss est coincée dans cette pyramide !
-  //[Gladyss] Bip Bip
-  //[Emma] Ne t’inquiète pas, on va t’aider à sortir de ce labyrinth !
+
+// PAGE 5-1 - Arrivé dans la jungle
+//[Mathéo] Nous voilà maintenant dans la jungle !
+//[Emma] Regarde ! Gladyss est coincée dans cette pyramide !
+//[Gladyss] Bip Bip
+//[Emma] Ne t’inquiète pas, on va t’aider à sortir de ce labyrinth !
 var page5_1 = [
 
 ]
