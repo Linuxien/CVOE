@@ -229,3 +229,15 @@ body {
 	top: 11em;
 	left: 11em;
 }
+
+#panier{
+  display: none;
+}
+
+.alPan{
+  max-width: 5%;
+  margin-right: 1em;
+  opacity: 0.3;
+  border: 5px solid #fff;
+  box-shadow: 8px 8px 12px #555;
+}

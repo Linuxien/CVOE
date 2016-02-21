@@ -51,6 +51,12 @@
 
     <div id="menu">
       <a id="btnStart" href="#">Lire</a>
+      <div id="panier">
+        <img id="tartePan" class="alPan" src="assets/pages/page_2/tarte.png">
+        <img id="cremePan" class="alPan" src="assets/pages/page_3/creme.png">
+        <img id="sucrePan" class="alPan" src="assets/pages/page_4/sucre.png">
+        <img id="cacaoPan" class="alPan" src="assets/pages/page_5/cacao.png">
+      </div>
     </div>
 
     <div id="cycler">
@@ -70,7 +76,7 @@
           <div style="background-image:url(assets/pages/page_1/page1.2.png)"></div>
           
           <div style="background-image:url(assets/pages/page_2/page2.1.png)">
-          	<img id="tarte" src="assets/pages/page_2/tarte.png">
+          	<img id="tarte" class="al" src="assets/pages/page_2/tarte.png">
           </div>
           
           <div style="background-image:url(assets/pages/page_2/page2.2.png)">
@@ -84,11 +90,11 @@
           <div style="background-image:url(assets/pages/page_3/page3.2.png)">
             <canvas id="canvas_clapclap"></canvas>
             <img id="clapclap" src="assets/pages/page_3/clapclap.png">
-          	<img id="creme" src="assets/pages/page_3/creme.png">
+          	<img id="creme" class="al" src="assets/pages/page_3/creme.png">
           </div>
           
           <div style="background-image:url(assets/pages/page_4/page4.1.png)">
-          	<img id="sucre" src="assets/pages/page_4/sucre.png">
+          	<img id="sucre" class="al" src="assets/pages/page_4/sucre.png">
           </div>
           
           <div style="background-image:url(assets/pages/page_4/page4.2.png)">
@@ -104,7 +110,7 @@
           </div>
           
           <div style="background-image:url(assets/pages/page_5/page5.1.png)">
-          	<img id="cacao" src="assets/pages/page_5/cacao.png">
+          	<img id="cacao" class="al" src="assets/pages/page_5/cacao.png">
           </div>
           
           <div style="background-image:url(assets/pages/page_5/page5.2.png)">
@@ -183,7 +189,6 @@
         console.log('Page: ' + page);
 
         if (page === 2) {
-          // TODO modif ajout attribut pour ne pas repet les dial
           dialPage(0);
         }
 
@@ -191,110 +196,130 @@
           // premiere partie du dialogue de la page 2
           dialPage(1);
           
-          if ($('#cactus').css('display') !== 'none') {
-            $(".flipbook").turn("disable", true);
+          if(finLivre){
+            
+          } else {
+            if ($('#cactus').css('display') !== 'none') {
+              $(".flipbook").turn("disable", true);
 
-            $('#stick').draggable();
+              $('#stick').draggable();
 
-            $('#cactus').droppable({
-              drop: function (event, ui) {
-                $(this).fadeOut();
-                $('#stick').fadeOut();
-                $(".flipbook").turn("disable", false);
-                dialPage(3);
-              }
-            });
+              $('#cactus').droppable({
+                drop: function (event, ui) {
+                  $(this).fadeOut();
+                  $('#stick').fadeOut();
+                  $(".flipbook").turn("disable", false);
+                  dialPage(3);
+                }
+              });
+            }
           }
         }
 
 	    if (page === 6) {
-        $(".flipbook").turn("disable", true);
-        
-        dialPage(4);
-  //	    	$('#canvas_clapclap').fadeIn('slow');
-        $('#clapclap').hover(function(){
-          $(this).effect('shake');
-          $(this).css('opacity','1');
-        });
+        if(finLivre){
+          // TODO
+        } else {
+          $(".flipbook").turn("disable", true);
+
+          dialPage(4);
+    //	    	$('#canvas_clapclap').fadeIn('slow');
+          $('#clapclap').hover(function(){
+            $(this).effect('shake');
+            $(this).css('opacity','1');
+          });
+        }
 	    }
         
       if(page === 8){
-        $(".flipbook").turn("disable", true);
-        
-        dialPage(7);
+        if(finLivre){
+          // TODO
+        }else{
+          $(".flipbook").turn("disable", true);
+
+          dialPage(7);      
+        }
       }
         
       if (page === 10) {
-        $(".flipbook").turn("disable", true);
-        dialPage(11);
-        var i = 0;
+        if(finLivre){
+          // TODO
+        } else {
+          $(".flipbook").turn("disable", true);
+          dialPage(11);
+          var i = 0;
 
-        if (annyang) {
-          
-          var laby = [
-            {direction: 'right', top: '11em', left: '18em'},
-            {direction: 'down', top: '18em', left: '18em'},
-            {direction: 'left', top: '18em', left: '4em'},
-            {direction: 'down', top: '22em', left: '4em'},
-            {direction: 'right', top: '22em', left: '11em'},
-            {direction: 'down', top: '32em', left: '10em'},
-          ];
+          if (annyang) {
 
-          var commands = {
-            'Left': function() {
-              if (i === 2) {
-                $('#gladyss_laby').fadeOut();
-                $('#gladyss_laby').css('top', laby[i].top).css('left', laby[i].left).fadeIn();
-                i++;
-              }
-            },
+            var laby = [
+              {direction: 'right', top: '11em', left: '18em'},
+              {direction: 'down', top: '18em', left: '18em'},
+              {direction: 'left', top: '18em', left: '4em'},
+              {direction: 'down', top: '22em', left: '4em'},
+              {direction: 'right', top: '22em', left: '11em'},
+              {direction: 'down', top: '32em', left: '10em'},
+            ];
 
-            'Right': function() {
-              if (i === 0) {
-                $('#gladyss_laby').fadeOut();
-                $('#gladyss_laby').css('top', laby[i].top).css('left', laby[i].left).fadeIn();
-                i++;
-              }
+            var commands = {
+              'Left': function() {
+                if (i === 2) {
+                  $('#gladyss_laby').fadeOut();
+                  $('#gladyss_laby').css('top', laby[i].top).css('left', laby[i].left).fadeIn();
+                  i++;
+                }
+              },
 
-              if (i === 4) {
-                $('#gladyss_laby').fadeOut();
-                $('#gladyss_laby').css('top', laby[i].top).css('left', laby[i].left).fadeIn();
-                i++;
-              }
-            },
+              'Right': function() {
+                if (i === 0) {
+                  $('#gladyss_laby').fadeOut();
+                  $('#gladyss_laby').css('top', laby[i].top).css('left', laby[i].left).fadeIn();
+                  i++;
+                  dialPage(12);
+                }
 
-            'Down': function() {
-              if (i === 1) {
-                $('#gladyss_laby').fadeOut();
-                $('#gladyss_laby').css('top', laby[i].top).css('left', laby[i].left).fadeIn();
-                i++;
-                dialPage(12);
-              }
+                if (i === 4) {
+                  $('#gladyss_laby').fadeOut();
+                  $('#gladyss_laby').css('top', laby[i].top).css('left', laby[i].left).fadeIn();
+                  i++;
+                }
+              },
 
-              if (i === 3) {
-                $('#gladyss_laby').fadeOut();
-                $('#gladyss_laby').css('top', laby[i].top).css('left', laby[i].left).fadeIn();
-                i++;
-              }
+              'Down': function() {
+                if (i === 1) {
+                  $('#gladyss_laby').fadeOut();
+                  $('#gladyss_laby').css('top', laby[i].top).css('left', laby[i].left).fadeIn();
+                  i++;
+                }
 
-              if (i === 5) {
-                $('#gladyss_laby').fadeOut();
-                $('#gladyss_laby').css('top', laby[i].top).css('left', laby[i].left).fadeIn();
-                i++;
-                // gladyss est arrivée
-//                dialPage(12);
-              }
-            },
-          };
-          annyang.addCommands(commands);
-          annyang.start();
+                if (i === 3) {
+                  $('#gladyss_laby').fadeOut();
+                  $('#gladyss_laby').css('top', laby[i].top).css('left', laby[i].left).fadeIn();
+                  i++;
+                }
+
+                if (i === 5) {
+                  $('#gladyss_laby').fadeOut();
+                  $('#gladyss_laby').css('top', laby[i].top).css('left', laby[i].left).fadeIn();
+                  i++;
+                  // gladyss est arrivée
+  //                dialPage(12);
+                }
+              },
+            };
+            annyang.addCommands(commands);
+            annyang.start();
+          }
         }
       }
         
         if(page === 12){
-          $(".flipbook").turn("disable", true);
-          
-          dialPage(13);
+          if(finLivre){
+            // TODO test si tout les aliments présents
+          } else {
+            $(".flipbook").turn("disable", true);
+
+            dialPage(13);
+          }
         }
         
       });
@@ -315,6 +340,10 @@
     }
 
     var utterance = new SpeechSynthesisUtterance();
+    
+    var finLivre = false;
+    
+    var panier = [];
 
     window.onload = function () {
       window.speechSynthesis.onvoiceschanged = function () {

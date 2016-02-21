@@ -396,50 +396,50 @@ var page5_2 = [
 //[Emma] Rendez-nous notre Oncle Ernest !
 //[Oncle Ernest] Les enfants vous êtes là ! Son point faible est la cuisine, cuisinez lui une bonne tarte au chocolat, et il sera tendre comme un agneau ! Vous trouverez les ingrédients nécéssaires dans les pages de ce livre !
 var page6_1 = [
-  {
-    'speaker': 'Emma',
-    'type': 'synthese',
-    'dialog': "Oncle Ernest! "
-  }, {
-    'speaker': 'Matheo',
-    'type': 'synthese',
-    'dialog': "On l’a retrouvé !"
-  }, {
-    'speaker': 'Grand poulpe des ombres',
-    'type': 'audio',
-    'dialog': [{
-      'file': 'assets/pages/page_6/Poulpe_1.mp3',
-      'text': 'Il suffit ! Mr.Oncle est mon prisonnier!'
-    }]
-  }, {
-    'speaker': 'Matheo',
-    'type': 'synthese',
-    'dialog': "Alors c’est toi le grand poulpe des ombres !"
-  }, {
-    'speaker': 'Monsieur grand poulpe des ombres',
-    'type': 'audio',
-    'dialog': [{
-      'file': 'assets/pages/page_6/Poulpe_2.mp3',
-      'text': 'MONSIEUR le grand poulpe des ombres je vous pris !'
-    }]
-  }, {
-    'speaker': 'Emma',
-    'type': 'synthese',
-    'dialog': "Rendez-nous notre Oncle Ernest ! "
-  }, {
-    'speaker': 'Oncle Ernest',
-    'type': 'audio',
-    'dialog': [{
-      'file': 'assets/pages/page_6/Oncle_1.mp3',
-      'text': 'Les enfants vous êtes là !'
-    }, {
-      'file': 'assets/pages/page_6/Oncle_2.mp3',
-      'text': 'Son point faible est la patisserie, cuisinez lui une bonne tarte au chocolat, et il sera tendre comme un agneau !'
-    }, {
-      'file': 'assets/pages/page_6/Oncle_3.mp3',
-      'text': 'Vous trouverez les ingrédients nécéssaires dans les pages de ce livre !'
-    }]
-  }
+//  {
+//    'speaker': 'Emma',
+//    'type': 'synthese',
+//    'dialog': "Oncle Ernest! "
+//  }, {
+//    'speaker': 'Matheo',
+//    'type': 'synthese',
+//    'dialog': "On l’a retrouvé !"
+//  }, {
+//    'speaker': 'Grand poulpe des ombres',
+//    'type': 'audio',
+//    'dialog': [{
+//      'file': 'assets/pages/page_6/Poulpe_1.mp3',
+//      'text': 'Il suffit ! Mr.Oncle est mon prisonnier!'
+//    }]
+//  }, {
+//    'speaker': 'Matheo',
+//    'type': 'synthese',
+//    'dialog': "Alors c’est toi le grand poulpe des ombres !"
+//  }, {
+//    'speaker': 'Monsieur grand poulpe des ombres',
+//    'type': 'audio',
+//    'dialog': [{
+//      'file': 'assets/pages/page_6/Poulpe_2.mp3',
+//      'text': 'MONSIEUR le grand poulpe des ombres je vous pris !'
+//    }]
+//  }, {
+//    'speaker': 'Emma',
+//    'type': 'synthese',
+//    'dialog': "Rendez-nous notre Oncle Ernest ! "
+//  }, {
+//    'speaker': 'Oncle Ernest',
+//    'type': 'audio',
+//    'dialog': [{
+//      'file': 'assets/pages/page_6/Oncle_1.mp3',
+//      'text': 'Les enfants vous êtes là !'
+//    }, {
+//      'file': 'assets/pages/page_6/Oncle_2.mp3',
+//      'text': 'Son point faible est la patisserie, cuisinez lui une bonne tarte au chocolat, et il sera tendre comme un agneau !'
+//    }, {
+//      'file': 'assets/pages/page_6/Oncle_3.mp3',
+//      'text': 'Vous trouverez les ingrédients nécéssaires dans les pages de ce livre !'
+//    }]
+//  }
 ]
 
 // PAGE 6-2 - Arrivé scene final avec tout les ingrédients ou apres avoir donné la tarte

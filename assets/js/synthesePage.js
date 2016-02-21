@@ -145,19 +145,38 @@ function nextDial(idPage, idDial) {
     $(".flipbook").turn("disable", false);
   } else if (idPage === 13){
     $(".flipbook").turn("disable", false);
+    finLivre = true;
+    
+    $(".al").css('cursor', 'pointer');
+    
+    $(".al").on('click', function(){
+      var idAl = $(this).attr('id');
+      
+      $(this).fadeOut();
+      
+      $('#'+idAl+'Pan').css('opacity', '1');
+      
+    });
+    
+    $('#panier').fadeIn();
+    
   }
 }
 
 // lance les dialogues
 // TODO ajout attr pour ne pas repet les dial
 function dialPage(id) {
-  // seulement pour la premiere page
-  if (id === 0) {
-    $(".flipbook").turn("disable", true);
+  if (finLivre){
+    // TODO
+  } else {
+    // seulement pour la premiere page
+    if (id === 0) {
+      $(".flipbook").turn("disable", true);
+    }
+
+    console.log('DIAL PAGE : ' + id);
+
+    nextDial(id, 0);
   }
-
-  console.log('DIAL PAGE : ' + id);
-
-  nextDial(id, 0);
 
 }
