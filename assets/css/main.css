@@ -272,4 +272,8 @@ body {
 
 #clone {
   display: none;
+  top: 9em;
+  z-index: 10;
+  left: 31em;
+  position: absolute;
 }
