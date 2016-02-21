@@ -36,6 +36,8 @@
   <script type="text/javascript" src="assets/js/photoBAM.js"></script>
   <script type="application/javascript" src="assets/lib/volume-meter.js"></script>
   
+  <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.2.1/annyang.min.js"></script>
+  
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
 
@@ -107,7 +109,9 @@
           	<img id="cacao" src="assets/pages/page_5/cacao.png">
           </div>
           
-          <div style="background-image:url(assets/pages/page_5/page5.2.png)"></div>
+          <div style="background-image:url(assets/pages/page_5/page5.2.png)">
+            <img id="gladyss_laby" src="assets/pages/page_5/GladyssLaby.png">
+          </div>
           
           <div style="background-image:url(assets/pages/page_6/page6.1.png)"></div>
           
@@ -221,6 +225,69 @@
         
         dialPage(7);
       }
+        
+      if (page === 10) {
+        var i = 0;
+
+        if (annyang) {
+          
+          var laby = [
+            {direction: 'right', top: '11em', left: '18em'},
+            {direction: 'down', top: '18em', left: '18em'},
+            {direction: 'left', top: '18em', left: '4em'},
+            {direction: 'down', top: '22em', left: '4em'},
+            {direction: 'right', top: '22em', left: '11em'},
+            {direction: 'down', top: '32em', left: '10em'},
+          ];
+
+          var commands = {
+            'Left': function() {
+              if (i === 2) {
+                $('#gladyss_laby').fadeOut();
+                $('#gladyss_laby').css('top', laby[i].top).css('left', laby[i].left).fadeIn();
+                i++;
+              }
+            },
+
+            'Right': function() {
+              if (i === 0) {
+                $('#gladyss_laby').fadeOut();
+                $('#gladyss_laby').css('top', laby[i].top).css('left', laby[i].left).fadeIn();
+                i++;
+              }
+
+              if (i === 4) {
+                $('#gladyss_laby').fadeOut();
+                $('#gladyss_laby').css('top', laby[i].top).css('left', laby[i].left).fadeIn();
+                i++;
+              }
+            },
+
+            'Down': function() {
+              if (i === 1) {
+                $('#gladyss_laby').fadeOut();
+                $('#gladyss_laby').css('top', laby[i].top).css('left', laby[i].left).fadeIn();
+                i++;
+              }
+
+              if (i === 3) {
+                $('#gladyss_laby').fadeOut();
+                $('#gladyss_laby').css('top', laby[i].top).css('left', laby[i].left).fadeIn();
+                i++;
+              }
+
+              if (i === 5) {
+                $('#gladyss_laby').fadeOut();
+                $('#gladyss_laby').css('top', laby[i].top).css('left', laby[i].left).fadeIn();
+                i++;
+              }
+            },
+          };
+          annyang.addCommands(commands);
+          annyang.start();
+        }
+      }
+        
       });
     }
 
