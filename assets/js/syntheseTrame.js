@@ -34,39 +34,39 @@ window.onload = function () {
 }
 
 var trame1 = [
-//  {
-//    'speaker': "Matheo",
-//    'dialog': "Nous n’avons rien à faire aujourd’hui"
-//  },
-//  {
-//    'speaker': "Emma",
-//    'dialog': "Nous allons rendre visite à l’oncle Ernest, il a toujours de super histoires !"
-//  }
+  {
+    'speaker': "Matheo",
+    'dialog': "Nous n’avons rien à faire aujourd’hui"
+  },
+  {
+    'speaker': "Emma",
+    'dialog': "Nous allons rendre visite à l’oncle Ernest, il a toujours de super histoires !"
+  }
 ];
 
 var trame2 = [
-//  {
-//    'speaker': "Matheo",
-//    'dialog': "Tiens, l’oncle Ernest ne répond pas"
-//  },
-//  {
-//    'speaker': "Emma",
-//    'dialog': "Il n’est pas là ! "
-//  },
-//  {
-//    'speaker': "Matheo",
-//    'dialog': "Regarde, c’est quoi ce livre ? Allons le voir !"
-//  },
-//  {
-//    'speaker': "Emma",
-//    'dialog': "C’est une mauvaise idée, rentrons !"
-//  }
+  {
+    'speaker': "Matheo",
+    'dialog': "Tiens, l’oncle Ernest ne répond pas"
+  },
+  {
+    'speaker': "Emma",
+    'dialog': "Il n’est pas là ! "
+  },
+  {
+    'speaker': "Matheo",
+    'dialog': "Regarde, c’est quoi ce livre ? Allons le voir !"
+  },
+  {
+    'speaker': "Emma",
+    'dialog': "C’est une mauvaise idée, rentrons !"
+  }
 ]
 var trame3 = [
-//  {
-//    'speaker': "Emma",
-//    'dialog': "ouaaaaaa"
-//  }
+  {
+    'speaker': "Emma",
+    'dialog': "ouaaaaaa"
+  }
 ]
 
 var trames = [

@@ -62,14 +62,11 @@ function dialTrameFin(idTram) {
 function nextDialTram(idTrame, idDial) {
   //  console.log('NEXT DIAL');
   var trameCrt = tramesF[idTrame];
-  console.log('IDDIAL : ' + idDial);
   if (idDial < trameCrt.length) {
     // personne qui parle
     var quiParle = trameCrt[idDial].speaker;
-    console.info('QUI PARLE : ' + quiParle);
     // type de dialogue (audio ou synthese)
     var type = trameCrt[idDial].type;
-    console.info('TYPE : ' + type);
 
     // texte
     var text = '';
