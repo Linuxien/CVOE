@@ -230,8 +230,36 @@ body {
 	left: 11em;
 }
 
-#panier{
+#panier, #miam, #key, #tonton{
   display: none;
+}
+
+#miam {
+  position: absolute;
+  top: 24em;
+  max-width: 35%;
+  left: 18em;
+}
+
+#key {
+  position: absolute;
+  cursor: pointer;
+  max-width: 25%;
+  top: 17em;
+  left: 9em;
+}
+
+#ninja{
+  position: absolute;
+  top: 6.2em;
+  left: 1em;
+  opacity: 0;
+}
+
+#tonton {
+  position: absolute;
+  top: 20em;
+  left: 2em;
 }
 
 .alPan{

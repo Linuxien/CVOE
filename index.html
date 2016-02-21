@@ -117,9 +117,16 @@
             <img id="gladyss_laby" src="assets/pages/page_5/GladyssLaby.png">
           </div>
           
-          <div style="background-image:url(assets/pages/page_6/page6.1.png)"></div>
+          <div style="background-image:url(assets/pages/page_6/page6.1.png)">
+            <img id="miam" src="assets/pages/page_6/finaltarte.png">
+            
+          </div>
           
-          <div style="background-image:url(assets/pages/page_6/page6.2.png)"></div>
+          <div style="background-image:url(assets/pages/page_6/page6.2.png)">
+            <img id="key" src="assets/pages/page_6/key.png">
+            <img id="tonton" src="assets/pages/page_6/oncle.png">
+            <img id="ninja" src="assets/pages/page_6/ninja.png">
+          </div>
           
         </div>
       </div>
@@ -189,7 +196,11 @@
         console.log('Page: ' + page);
 
         if (page === 2) {
-          dialPage(0);
+          if(finLivre){
+            pourAliment();
+          }else{
+            dialPage(0);
+          }
         }
 
         if (page === 4) {
@@ -197,7 +208,7 @@
           dialPage(1);
           
           if(finLivre){
-            
+            pourAliment();
           } else {
             if ($('#cactus').css('display') !== 'none') {
               $(".flipbook").turn("disable", true);
@@ -219,6 +230,7 @@
 	    if (page === 6) {
         if(finLivre){
           // TODO
+          pourAliment();
         } else {
           $(".flipbook").turn("disable", true);
 
@@ -234,6 +246,7 @@
       if(page === 8){
         if(finLivre){
           // TODO
+          pourAliment();
         }else{
           $(".flipbook").turn("disable", true);
 
@@ -244,6 +257,7 @@
       if (page === 10) {
         if(finLivre){
           // TODO
+          pourAliment();
         } else {
           $(".flipbook").turn("disable", true);
           dialPage(11);
@@ -314,7 +328,25 @@
         
         if(page === 12){
           if(finLivre){
-            // TODO test si tout les aliments présents
+            if(panier.length === 4){
+              $(".flipbook").turn("disable", true);
+              
+              // todo faire apparaitre tarte
+              $('#miam').fadeIn();
+              
+              dialPage(14);
+              
+              $('#key').draggable();
+
+              $('#ninja').droppable({
+                drop: function (event, ui) {
+                  $(this).fadeIn();
+                  $('#tonton').fadeIn();
+                  $('#key').fadeOut();
+                  dialPage(15);
+                }
+              });
+            }
           } else {
             $(".flipbook").turn("disable", true);
 
@@ -344,6 +376,7 @@
     var finLivre = false;
     
     var panier = [];
+    var tabImgAl = [];
 
     window.onload = function () {
       window.speechSynthesis.onvoiceschanged = function () {
@@ -361,6 +394,8 @@
         $(this).off('click');
         //                cycleImages();
       });
+      
+      tabImgAl = $('.al');
     }
     $('#canvas_clapclap').hide();
   </script>

@@ -135,39 +135,44 @@ function nextDial(idPage, idDial) {
     photoAvecBam();
     // on fait disparaitre BAM parceu'il apparait sur la photo
     $('#bam').hide('clip');
-    
+
     // on fait apparaitre le bouton pour prendre snaphsot
     $('#btnStart').html('Cheese !').fadeIn();
-  } else if (idPage === 10) {    
+  } else if (idPage === 10) {
     $('#bam').show('clip');
     $(".flipbook").turn("disable", false);
   } else if (idPage === 12) {
     $(".flipbook").turn("disable", false);
-  } else if (idPage === 13){
+  } else if (idPage === 13) {
     $(".flipbook").turn("disable", false);
     finLivre = true;
-    
-    $(".al").css('cursor', 'pointer');
-    
-    $(".al").on('click', function(){
-      var idAl = $(this).attr('id');
-      
-      $(this).fadeOut();
-      
-      $('#'+idAl+'Pan').css('opacity', '1');
-      
-    });
-    
+
+    // on recupere les classes des images
+    pourAliment();
+
+
     $('#panier').fadeIn();
-    
+
+  } else if (idPage === 14) {
+    // on ferme le panier
+    $('#panier').fadeOut();
+    // on affiche la clé
+    $('#key').fadeIn();
+  } else if (idPage === 15) {
+    // on "ferme" le livre
+    $('.flipbook').fadeOut('slow');
   }
 }
 
 // lance les dialogues
 // TODO ajout attr pour ne pas repet les dial
 function dialPage(id) {
-  if (finLivre){
-    // TODO
+  if (finLivre) {
+    if (id >= 14) {
+      console.log('DIAL PAGE : ' + id);
+
+      nextDial(id, 0);
+    }
   } else {
     // seulement pour la premiere page
     if (id === 0) {
@@ -175,8 +180,33 @@ function dialPage(id) {
     }
 
     console.log('DIAL PAGE : ' + id);
-
     nextDial(id, 0);
+
   }
 
+}
+
+function pourAliment() {
+  tabImgAl.each(function (index) {
+    // on peut les pointer
+    $(this).css('cursor', 'pointer');
+
+    $(this).off('click');
+    
+    // quand on clique
+    $(this).on('click', function () {
+      // on les enleve
+      $(this).fadeOut();
+
+      // et on le met dans le panier
+      var idAl = $(this).attr('id');
+      console.log('AL : ' + idAl);
+      $('#' + idAl + 'Pan').css('opacity', '1');
+
+      // on l'ajoute dans le tableau
+      if($.inArray(idAl, panier) === -1){
+        panier.push(idAl);
+      }
+    });
+  });
 }
