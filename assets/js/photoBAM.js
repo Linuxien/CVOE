@@ -5,7 +5,7 @@ function photoAvecBam () {
   var canvasOverlay = document.getElementById('overlay')
   var overlayContext = canvasOverlay.getContext('2d');
   // snapshot
-  var snapshot_btn = document.getElementById("snapshot_btn");
+  var snapshot_btn = document.getElementById("btnStart");
   var snapshot = document.getElementById("snapshot");
   var snapshotContext = snapshot.getContext('2d');
   // iamges
@@ -68,8 +68,9 @@ function photoAvecBam () {
       
       canvasOverlay.remove();
       videoInput.remove();
-      snapshot_btn.remove();
       
+      this.removeEventListener('click', arguments.callee, false);
+      $('#btnStart').fadeOut();
       // on passe au dial suivant
       dialPage(10);
     }

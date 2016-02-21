@@ -315,27 +315,27 @@ var page4_1bis = [
 // PAGE 4-2 Apres souffle dans le micro
 //[Gladyss] Mettez vous devant la caméra et appuyez sur le bouton de l’appareil photo !
 var page4_2 = [
-  {
-    'speaker': 'Gladyss',
-    'type': 'audio',
-    'dialog': [{
-      'file': 'assets/pages/page_4/Gladys_3.mp3',
-      'text': 'Mettez vous devant la caméra et appuyez sur le bouton de l’appareil photo !'
-    }]
-  }
+//  {
+//    'speaker': 'Gladyss',
+//    'type': 'audio',
+//    'dialog': [{
+//      'file': 'assets/pages/page_4/Gladys_3.mp3',
+//      'text': 'Mettez vous devant la caméra et appuyez sur le bouton de l’appareil photo !'
+//    }]
+//  }
 ]
 
 // PAGE 4-3 Apres prise de la phot
 //[Bam] Merci ! Je vais vous aider à quitter la lune !
 var page4_3 = [
-  {
-    'speaker': 'Bam',
-    'type': 'audio',
-    'dialog': [{
-      'file': 'assets/pages/page_4/Bam_3.mp3',
-      'text': 'Merci ! Je vais vous aider à quitter la lune !'
-    }]
-  }
+//  {
+//    'speaker': 'Bam',
+//    'type': 'audio',
+//    'dialog': [{
+//      'file': 'assets/pages/page_4/Bam_3.mp3',
+//      'text': 'Merci ! Je vais vous aider à quitter la lune !'
+//    }]
+//  }
 ]
 
 // PAGE 5-1 - Arrivé dans la jungle
@@ -344,47 +344,47 @@ var page4_3 = [
 //[Gladyss] Bip Bip
 //[Emma] Ne t’inquiète pas, on va t’aider à sortir de ce labyrinth !
 var page5_1 = [
-  {
-    'speaker': 'Matheo',
-    'type': 'synthese',
-    'dialog': "Nous voilà maintenant dans la jungle !"
-  }, {
-    'speaker': 'Emma',
-    'type': 'synthese',
-    'dialog': "Regarde ! Gladyss est coincée dans cette pyramide !"
-  }, {
-    'speaker': 'Gladyss',
-    'type': 'audio',
-    'dialog': [{
-      'file': 'assets/audio/OKBIP.mp3',
-      'text': 'BIP'
-    }]
-  }, {
-    'speaker': 'Emma',
-    'type': 'synthese',
-    'dialog': "Ne t’inquiète pas, on va t’aider à sortir de ce labyrinthe !"
-  }
+//  {
+//    'speaker': 'Matheo',
+//    'type': 'synthese',
+//    'dialog': "Nous voilà maintenant dans la jungle !"
+//  }, {
+//    'speaker': 'Emma',
+//    'type': 'synthese',
+//    'dialog': "Regarde ! Gladyss est coincée dans cette pyramide !"
+//  }, {
+//    'speaker': 'Gladyss',
+//    'type': 'audio',
+//    'dialog': [{
+//      'file': 'assets/audio/OKBIP.mp3',
+//      'text': 'BIP'
+//    }]
+//  }, {
+//    'speaker': 'Emma',
+//    'type': 'synthese',
+//    'dialog': "Ne t’inquiète pas, on va t’aider à sortir de ce labyrinthe !"
+//  }
 ]
 
 // PAGE 5-2 - Apres que Gladyss soit sortie
 //[Gladyss] Merci ! J’ai bien cru que les transistors étaient cuient !
 //[Emma] Cette page ne m’inspire pas beaucoup, allons à la suivante !
 var page5_2 = [
-  {
-    'speaker': 'Gladyss',
-    'type': 'audio',
-    'dialog': [{
-      'file': 'assets/audio/OUFBIP.mp3',
-      'text': 'BIP'
-    }, {
-      'file': 'assets/pages/page_5/Gladys_1.mp3',
-      'text': 'Merci ! J’ai bien cru que les transistors étaient cuits !'
-    }]
-  }, {
-    'speaker': 'Emma',
-    'type': 'synthese',
-    'dialog': "Cette page ne m’inspire pas beaucoup, allons à la suivante !"
-  }
+//  {
+//    'speaker': 'Gladyss',
+//    'type': 'audio',
+//    'dialog': [{
+//      'file': 'assets/audio/OUFBIP.mp3',
+//      'text': 'BIP'
+//    }, {
+//      'file': 'assets/pages/page_5/Gladys_1.mp3',
+//      'text': 'Merci ! J’ai bien cru que les transistors étaient cuits !'
+//    }]
+//  }, {
+//    'speaker': 'Emma',
+//    'type': 'synthese',
+//    'dialog': "Cette page ne m’inspire pas beaucoup, allons à la suivante !"
+//  }
 ]
 
 // PAGE 6-1 - Arrivé Scene final
@@ -396,13 +396,63 @@ var page5_2 = [
 //[Emma] Rendez-nous notre Oncle Ernest !
 //[Oncle Ernest] Les enfants vous êtes là ! Son point faible est la cuisine, cuisinez lui une bonne tarte au chocolat, et il sera tendre comme un agneau ! Vous trouverez les ingrédients nécéssaires dans les pages de ce livre !
 var page6_1 = [
-
+  {
+    'speaker': 'Emma',
+    'type': 'synthese',
+    'dialog': "Oncle Ernest! "
+  }, {
+    'speaker': 'Matheo',
+    'type': 'synthese',
+    'dialog': "On l’a retrouvé !"
+  }, {
+    'speaker': 'Grand poulpe des ombres',
+    'type': 'audio',
+    'dialog': [{
+      'file': 'assets/pages/page_6/Poulpe_1.mp3',
+      'text': 'Il suffit ! Mr.Oncle est mon prisonnier!'
+    }]
+  }, {
+    'speaker': 'Matheo',
+    'type': 'synthese',
+    'dialog': "Alors c’est toi le grand poulpe des ombres !"
+  }, {
+    'speaker': 'Monsieur grand poulpe des ombres',
+    'type': 'audio',
+    'dialog': [{
+      'file': 'assets/pages/page_6/Poulpe_2.mp3',
+      'text': 'MONSIEUR le grand poulpe des ombres je vous pris !'
+    }]
+  }, {
+    'speaker': 'Emma',
+    'type': 'synthese',
+    'dialog': "Rendez-nous notre Oncle Ernest ! "
+  }, {
+    'speaker': 'Oncle Ernest',
+    'type': 'audio',
+    'dialog': [{
+      'file': 'assets/pages/page_6/Oncle_1.mp3',
+      'text': 'Les enfants vous êtes là !'
+    }, {
+      'file': 'assets/pages/page_6/Oncle_2.mp3',
+      'text': 'Son point faible est la patisserie, cuisinez lui une bonne tarte au chocolat, et il sera tendre comme un agneau !'
+    }, {
+      'file': 'assets/pages/page_6/Oncle_3.mp3',
+      'text': 'Vous trouverez les ingrédients nécéssaires dans les pages de ce livre !'
+    }]
+  }
 ]
 
 // PAGE 6-2 - Arrivé scene final avec tout les ingrédients ou apres avoir donné la tarte
 //[Poulpe] ça ne fonctionnera pas...ça… MAIS C’EST DELICIEUX ! Oh Mr. les enfants je suis désolé d’avoir enfermé Mr. Votre Oncle. Tenez, voici la clé !
 var page6_2 = [
-
+  {
+    'speaker': 'Monsieur grand poulpe des ombres',
+    'type': 'audio',
+    'dialog': [{
+      'file': 'assets/pages/page_6/Poulpe_3.mp3',
+      'text': 'ça ne fonctionnera pas...ça… MAIS C’EST DELICIEUX ! Oh Mr. les enfants je suis désolé d’avoir enfermé Mr. Votre Oncle. Tenez, voici la clé'
+    }]
+  }
 ]
 
 // PAGE 6-3 - Apres que Poulpe est donné la clé, et qu'on l'utilise sur la cage
@@ -411,7 +461,32 @@ var page6_2 = [
 //[Galdyss] Je vous attendrai aussi !
 //[Oncle Ernest] Il est temps de rentrer !
 var page6_3 = [
-
+  {
+    'speaker': 'Monsieur grand poulpe des ombres',
+    'type': 'audio',
+    'dialog': [{
+      'file': 'assets/pages/page_6/Poulpe_4.mp3',
+      'text': 'Dites vous reviendrez s’il vous plait ?'
+    }]
+  }, {
+    'speaker': 'Emma',
+    'type': 'synthese',
+    'dialog': "Oui ! Bien sûr ! "
+  }, {
+    'speaker': 'Gladyss',
+    'type': 'audio',
+    'dialog': [{
+      'file': 'assets/pages/page_6/Gladys_1.mp3',
+      'text': 'Je vous attendrai aussi !'
+    }]
+  }, {
+    'speaker': 'Oncle Ernest',
+    'type': 'audio',
+    'dialog': [{
+      'file': 'assets/pages/page_6/Oncle_4.mp3',
+      'text': 'Il est temps de rentrer !'
+    }]
+  }
 ]
 
 //dialPage(X) avec X :
@@ -428,6 +503,9 @@ var page6_3 = [
 //10: page4_3 --> Apres prise photo
 //11: page5_1 --> Arrivé jungle
 //12: page5_2 --> Gladys sort du laby
+//13: page6_1 --> arrivé scène final
+//14: page6_2 --> arrivé scène final avec tout les aliments
+//15: page6_3 --> apres avoir libéré l'oncle
 
 var pages = [
   page1,
@@ -442,5 +520,8 @@ var pages = [
   page4_2,
   page4_3,
   page5_1,
-  page5_2
+  page5_2,
+  page6_1,
+  page6_2,
+  page6_3
 ]
