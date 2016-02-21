@@ -80,6 +80,7 @@
           <div style="background-image:url(assets/pages/page_3/page3.1.png)"></div>
           
           <div style="background-image:url(assets/pages/page_3/page3.2.png)">
+            <canvas id="canvas_clapclap"></canvas>
             <img id="clapclap" src="assets/pages/page_3/clapclap.png">
           	<img id="creme" src="assets/pages/page_3/creme.png">
           </div>
@@ -97,7 +98,7 @@
             <canvas id="overlay" width="320" height="240"></canvas>
             <canvas id="snapshot" width="320" height="240"></canvas>
             <br/>
-            <button id="snapshot_btn">SNAPSHOT</button>
+            <button id="snapshot_btn">Cheese !</button>
             <img id="mask" src="assets/pages/page_4/helmet.png" style="display:none;">
             <img id="bam" src="assets/pages/page_4/BAM.png" style="display:none;">
           </div>
@@ -119,8 +120,6 @@
     <div id="divsubtitles">
       <p id="sub"></p>
     </div>
-
-    <canvas id="canvas_clapclap"></canvas>
   </div>
 
   <script type="text/javascript" src="assets/js/basic.js"></script>
@@ -218,7 +217,6 @@
 	    }
         
       if(page === 8){
-        $('#canvas_clapclap').fadeOut('slow');
         $(".flipbook").turn("disable", true);
         
         dialPage(7);

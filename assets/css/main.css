@@ -172,8 +172,8 @@ body {
 	height: 150px;
 	border: 1px solid black;
 	z-index: 10;
-	top: 17%;
-	left: 50%;
+  top: 31%;
+  left: 50%;
 }
 
 #clapclap {
@@ -219,4 +219,7 @@ body {
 
 #snapshot_btn {
   display: none;
+  position: absolute;
+  left: 15em;
+  top: 3em;
 }
