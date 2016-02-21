@@ -370,7 +370,21 @@ var page5_1 = [
 //[Gladyss] Merci ! J’ai bien cru que les transistors étaient cuient !
 //[Emma] Cette page ne m’inspire pas beaucoup, allons à la suivante !
 var page5_2 = [
-
+  {
+    'speaker': 'Gladyss',
+    'type': 'audio',
+    'dialog': [{
+      'file': 'assets/audio/OUFBIP.mp3',
+      'text': 'BIP'
+    }, {
+      'file': 'assets/pages/page_5/Gladys_1.mp3',
+      'text': 'Merci ! J’ai bien cru que les transistors étaient cuits !'
+    }]
+  }, {
+    'speaker': 'Emma',
+    'type': 'synthese',
+    'dialog': "Cette page ne m’inspire pas beaucoup, allons à la suivante !"
+  }
 ]
 
 // PAGE 6-1 - Arrivé Scene final
@@ -412,6 +426,8 @@ var page6_3 = [
 //8: page4_1bis --> arrivé de BAM
 //9: page4_2 --> Apres souffle dans le micro
 //10: page4_3 --> Apres prise photo
+//11: page5_1 --> Arrivé jungle
+//12: page5_2 --> Gladys sort du laby
 
 var pages = [
   page1,

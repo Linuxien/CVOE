@@ -142,6 +142,8 @@ function nextDial(idPage, idDial) {
     
     $('#bam').show('clip');
     $(".flipbook").turn("disable", false);
+  } else if (idPage === 12) {
+    $(".flipbook").turn("disable", false);
   }
 }
 

@@ -227,6 +227,7 @@
       }
         
       if (page === 10) {
+        $(".flipbook").turn("disable", true);
         dialPage(11);
         var i = 0;
 
@@ -281,6 +282,8 @@
                 $('#gladyss_laby').fadeOut();
                 $('#gladyss_laby').css('top', laby[i].top).css('left', laby[i].left).fadeIn();
                 i++;
+                // gladyss est arrivée
+                dialPage(12);
               }
             },
           };
