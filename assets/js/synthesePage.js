@@ -161,6 +161,10 @@ function nextDial(idPage, idDial) {
   } else if (idPage === 15) {
     // on "ferme" le livre
     $('.flipbook').fadeOut('slow');
+
+    $('#cycler').children().first().attr('src', 'assets/trames/trame4.png').addClass('active');
+    $('#cycler').children().last().remove();
+    $('#cycler').children().first().attr('src', 'assets/trames/trame5.png');
   }
 }
 
