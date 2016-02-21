@@ -109,7 +109,7 @@ body {
 
 #cycler {
   position: relative;
-  z-index: -1;
+  /*z-index: -1;*/
 }
 
 #cycler img, #cycler div {
@@ -128,10 +128,6 @@ body {
 }
 
 #cycler img.active {
-  z-index: -2;
-}
-
-#cycler div.active {
   z-index: -2;
 }
 
