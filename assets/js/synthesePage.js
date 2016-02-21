@@ -31,7 +31,7 @@ function speakUtterance(idPage, idDial, quiParle, dial) {
 
   // a la fin de ce dialogue, on passe au suivant (next step)
   utterance.onend = function (event) {
-    console.info('DIAL FINI ');
+//    console.info('DIAL FINI ');
     idDial++;
     nextDial(idPage, idDial);
   }
@@ -162,11 +162,10 @@ function nextDial(idPage, idDial) {
   } else if (idPage === 15) {
     // on "ferme" le livre
     $('.flipbook').fadeOut('slow');
-    
-    // on démarre le nouveau cycle
-    
-    // on démarre les dernieres trames
-//    dialTrameFin(0);
+
+    $('#cycler').children().first().attr('src', 'assets/trames/trame4.png').addClass('active');
+    $('#cycler').children().last().remove();
+    $('#cycler').children().first().attr('src', 'assets/trames/trame5.png');
   }
 }
 
@@ -175,8 +174,6 @@ function nextDial(idPage, idDial) {
 function dialPage(id) {
   if (finLivre) {
     if (id >= 14) {
-      console.log('DIAL PAGE : ' + id);
-
       nextDial(id, 0);
     }
   } else {
@@ -185,7 +182,6 @@ function dialPage(id) {
       $(".flipbook").turn("disable", true);
     }
 
-    console.log('DIAL PAGE : ' + id);
     nextDial(id, 0);
 
   }
@@ -206,7 +202,6 @@ function pourAliment() {
 
       // et on le met dans le panier
       var idAl = $(this).attr('id');
-      console.log('AL : ' + idAl);
       $('#' + idAl + 'Pan').css('opacity', '1');
 
       // on l'ajoute dans le tableau
