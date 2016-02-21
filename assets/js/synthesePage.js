@@ -163,10 +163,10 @@ function nextDial(idPage, idDial) {
     // on "ferme" le livre
     $('.flipbook').fadeOut('slow');
 
-    $('#cycler').children().first().attr('src', 'assets/trames/trame4.png');
     $('#cycler').children().last().remove();
-    $('#cycler').children().last().attr('src', 'assets/trames/trame5.png');
-    $('#cycler').children().first().addClass('active');
+    $('#cycler').children().last().attr('src', 'assets/trames/trame4.png');
+    $('#cycler').children().first().attr('src', 'assets/trames/trame5.png');
+    $('#cycler').children().last().addClass('active');
     $('#cycler').fadeIn();
     dialTrameFin(0);
   }
