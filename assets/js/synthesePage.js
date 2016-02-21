@@ -164,7 +164,8 @@ function nextDial(idPage, idDial) {
 
     $('#cycler').children().first().attr('src', 'assets/trames/trame4.png').addClass('active');
     $('#cycler').children().last().remove();
-    $('#cycler').children().first().attr('src', 'assets/trames/trame5.png');
+    $('#cycler').children().last().attr('src', 'assets/trames/trame5.png');
+    $('#cycler').fadeIn();
   }
 }
 
