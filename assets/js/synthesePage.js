@@ -139,6 +139,7 @@ function nextDial(idPage, idDial) {
     // on fait apparaitre le bouton pour prendre snaphsot
     $('#btnStart').html('Cheese !').fadeIn();
   } else if (idPage === 10) {
+    
     $('#bam').show('clip');
     $(".flipbook").turn("disable", false);
   } else if (idPage === 12) {
