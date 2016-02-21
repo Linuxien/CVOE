@@ -461,32 +461,32 @@ var page6_2 = [
 //[Galdyss] Je vous attendrai aussi !
 //[Oncle Ernest] Il est temps de rentrer !
 var page6_3 = [
-  {
-    'speaker': 'Monsieur grand poulpe des ombres',
-    'type': 'audio',
-    'dialog': [{
-      'file': 'assets/pages/page_6/Poulpe_4.mp3',
-      'text': 'Dites vous reviendrez s’il vous plait ?'
-    }]
-  }, {
-    'speaker': 'Emma',
-    'type': 'synthese',
-    'dialog': "Oui ! Bien sûr ! "
-  }, {
-    'speaker': 'Gladyss',
-    'type': 'audio',
-    'dialog': [{
-      'file': 'assets/pages/page_6/Gladys_1.mp3',
-      'text': 'Je vous attendrai aussi !'
-    }]
-  }, {
-    'speaker': 'Oncle Ernest',
-    'type': 'audio',
-    'dialog': [{
-      'file': 'assets/pages/page_6/Oncle_4.mp3',
-      'text': 'Il est temps de rentrer !'
-    }]
-  }
+//  {
+//    'speaker': 'Monsieur grand poulpe des ombres',
+//    'type': 'audio',
+//    'dialog': [{
+//      'file': 'assets/pages/page_6/Poulpe_4.mp3',
+//      'text': 'Dites vous reviendrez s’il vous plait ?'
+//    }]
+//  }, {
+//    'speaker': 'Emma',
+//    'type': 'synthese',
+//    'dialog': "Oui ! Bien sûr ! "
+//  }, {
+//    'speaker': 'Gladyss',
+//    'type': 'audio',
+//    'dialog': [{
+//      'file': 'assets/pages/page_6/Gladys_1.mp3',
+//      'text': 'Je vous attendrai aussi !'
+//    }]
+//  }, {
+//    'speaker': 'Oncle Ernest',
+//    'type': 'audio',
+//    'dialog': [{
+//      'file': 'assets/pages/page_6/Oncle_4.mp3',
+//      'text': 'Il est temps de rentrer !'
+//    }]
+//  }
 ]
 
 //dialPage(X) avec X :

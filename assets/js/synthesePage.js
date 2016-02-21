@@ -168,6 +168,7 @@ function nextDial(idPage, idDial) {
     $('#cycler').children().last().attr('src', 'assets/trames/trame5.png');
     $('#cycler').children().first().addClass('active');
     $('#cycler').fadeIn();
+    dialTrameFin(0);
   }
 }
 

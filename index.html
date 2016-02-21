@@ -179,12 +179,18 @@
       $active.fadeOut(1500, function () { //fade out the top image
         $active.css('z-index', -3).show().removeClass('active'); //reset the z-index and unhide the image
         $next.css('z-index', -1).addClass('active'); //make the next image the top one
-        speakTrame(idNextTrame, 0, utterance);
+        if(!finLivre){
+          speakTrame(idNextTrame, 0, utterance);
+        }else{
+          console.log('fin');
+        }
       });
-
-      if (!($active.next().length > 0)) {
-        $('.flipbook').fadeIn();
-        loadApp();
+      
+      if(!finLivre){
+        if (!($active.next().length > 0)) {
+          $('.flipbook').fadeIn();
+          loadApp();
+        }
       }
     }
 
