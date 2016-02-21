@@ -162,6 +162,11 @@ function nextDial(idPage, idDial) {
   } else if (idPage === 15) {
     // on "ferme" le livre
     $('.flipbook').fadeOut('slow');
+    
+    // on démarre le nouveau cycle
+    
+    // on démarre les dernieres trames
+//    dialTrameFin(0);
   }
 }
 
