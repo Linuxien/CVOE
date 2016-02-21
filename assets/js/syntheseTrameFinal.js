@@ -85,10 +85,15 @@ function nextDialTram(idTrame, idDial) {
     }
   } else if (idTrame === 0){
     // on fait apparaitre le canvas
-    $('clone').slideDown();
+    $('#clone').slideDown();
+    
+    $('#cycler').fadeOut();
+    $('#cycler').children().first().remove();
+    $('#cycler').children().last().attr('src', 'assets/trames/trame5.png');
+    $('#cycler').fadeIn();
     
     // next
-    dialTrameFin(1)
+    dialTrameFin(1);
   }else if (idTrame === 0){
     // THE END
   }
