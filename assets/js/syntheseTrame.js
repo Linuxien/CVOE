@@ -123,9 +123,8 @@ function speakTrame(id, step, utterance) {
     } else {
       // sinon on peut passer à la trame suivante
 
-      console.log('ID =? ' + id);
       if (id !== 1) {
-        console.info('NEXT TRAME');
+//        console.info('NEXT TRAME');
         cycleImages(id + 1);
       }
     }
