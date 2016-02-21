@@ -340,6 +340,8 @@
 
               $('#ninja').droppable({
                 drop: function (event, ui) {
+                  $(this).hide();
+                  $(this).css('opacity', '1');
                   $(this).fadeIn();
                   $('#tonton').fadeIn();
                   $('#key').fadeOut();
