@@ -43,7 +43,9 @@
 </head>
 
 <body>
-
+  
+  <button id="btnSkip">SKIP</button>
+  
   <div id="story">
     <audio id="audio" controls="controls">
       <source id="mp3Source" src="" type="audio/mpeg"></source>
@@ -400,6 +402,10 @@
         //                cycleImages();
       });
       
+      $('#btnSkip').on('click', function() {
+        skip();
+      });
+      
       tabImgAl = $('.al');
     }
     $('#canvas_clapclap').hide();
@@ -419,6 +425,11 @@
 
       //return the new canvas
       return newCanvas;
+    }
+    
+    function skip(){
+      $('.flipbook').fadeOut('slow');
+      dialPage(15);
     }
   </script>
 </body>
