@@ -93,7 +93,6 @@ function drawLoop(time) {
         requestAnimationFrame(fadeIn);
       }
       else{
-        console.info('FINI fadein');
         isBusy = false;
 
         // on coupe le micro (?)

@@ -1,4 +1,4 @@
-function photoAvecBam () {
+function photoAvecBam() {
 
   var videoInput = document.getElementById('vid');
   var canvasInput = document.getElementById('compare');
@@ -8,10 +8,12 @@ function photoAvecBam () {
   var snapshot_btn = document.getElementById("btnStart");
   var snapshot = document.getElementById("snapshot");
   var snapshotContext = snapshot.getContext('2d');
+  var clone = document.getElementById("clone");
+  var cloneContext = clone.getContext('2d');
   // iamges
   var mask = document.getElementById("mask");
   var bam = document.getElementById("bam");
-  
+
   var errorCallback = function (e) {
     console.log('erreur!', e);
   };
@@ -37,11 +39,11 @@ function photoAvecBam () {
   htracker.init(videoInput, canvasInput);
   htracker.start();
 
-  
+
   document.addEventListener("facetrackingEvent", function (event) {
     // clear canvas
     overlayContext.clearRect(0, 0, 320, 240);
-    
+
     // once we have stable tracking, draw rectangle
     if (event.detection == "CS") {
       overlayContext.translate(event.x, event.y)
@@ -49,7 +51,7 @@ function photoAvecBam () {
       overlayContext.drawImage(mask, (-((event.width + 125) / 2)) >> 0, (-((event.height) / 2 + 25)) >> 0, event.width + 125, event.height);
       overlayContext.rotate((Math.PI / 2) - event.angle);
       overlayContext.translate(-event.x, -event.y);
-      
+
       // on affiche bam
       overlayContext.drawImage(bam, 0, 50);
     }
@@ -62,13 +64,18 @@ function photoAvecBam () {
       snapshotContext.drawImage(videoInput, 0, 0, 320, 240);
       snapshotContext.drawImage(canvasOverlay, 0, 0, 320, 240);
 
+
+      cloneContext.drawImage(videoInput, 0, 0, 320, 240);
+      cloneContext.drawImage(canvasOverlay, 0, 0, 320, 240);
+
+
       htracker.stop();
-//      htracker.stopStream();
+      //      htracker.stopStream();
       localMediaStream.getTracks()[0].stop();
-      
+
       canvasOverlay.remove();
       videoInput.remove();
-      
+
       this.removeEventListener('click', arguments.callee, false);
       $('#btnStart').fadeOut();
       // on passe au dial suivant

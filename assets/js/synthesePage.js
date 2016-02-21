@@ -31,7 +31,7 @@ function speakUtterance(idPage, idDial, quiParle, dial) {
 
   // a la fin de ce dialogue, on passe au suivant (next step)
   utterance.onend = function (event) {
-    console.info('DIAL FINI ');
+//    console.info('DIAL FINI ');
     idDial++;
     nextDial(idPage, idDial);
   }
@@ -139,6 +139,7 @@ function nextDial(idPage, idDial) {
     // on fait apparaitre le bouton pour prendre snaphsot
     $('#btnStart').html('Cheese !').fadeIn();
   } else if (idPage === 10) {
+    
     $('#bam').show('clip');
     $(".flipbook").turn("disable", false);
   } else if (idPage === 12) {
@@ -175,8 +176,6 @@ function nextDial(idPage, idDial) {
 function dialPage(id) {
   if (finLivre) {
     if (id >= 14) {
-      console.log('DIAL PAGE : ' + id);
-
       nextDial(id, 0);
     }
   } else {
@@ -185,7 +184,6 @@ function dialPage(id) {
       $(".flipbook").turn("disable", true);
     }
 
-    console.log('DIAL PAGE : ' + id);
     nextDial(id, 0);
 
   }
@@ -206,7 +204,6 @@ function pourAliment() {
 
       // et on le met dans le panier
       var idAl = $(this).attr('id');
-      console.log('AL : ' + idAl);
       $('#' + idAl + 'Pan').css('opacity', '1');
 
       // on l'ajoute dans le tableau

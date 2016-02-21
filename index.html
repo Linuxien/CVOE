@@ -28,6 +28,7 @@
 
   <script type="text/javascript" src="assets/js/textPage.js"></script>
   <script type="text/javascript" src="assets/js/syntheseTrame.js"></script>
+  <script type="text/javascript" src="assets/js/syntheseTrameFinal.js"></script>
   <script type="text/javascript" src="assets/js/synthesePage.js"></script>
 
   <script type="text/javascript" src="assets/js/soufflePoussiere.js"></script>
@@ -136,6 +137,8 @@
       <p id="sub"></p>
     </div>
   </div>
+  
+  <canvas id="clone" width="320" height="240"></canvas>
 
   <script type="text/javascript" src="assets/js/basic.js"></script>
 
@@ -193,7 +196,7 @@
       });
 
       $('.flipbook').bind('turned', function (event, page, view) {
-        console.log('Page: ' + page);
+//        console.log('Page: ' + page);
 
         if (page === 2) {
           if(finLivre){
@@ -400,6 +403,23 @@
       tabImgAl = $('.al');
     }
     $('#canvas_clapclap').hide();
+    
+    function cloneCanvas(oldCanvas) {
+
+      //create a new canvas
+      var newCanvas = document.createElement('canvas');
+      var context = newCanvas.getContext('2d');
+
+      //set dimensions
+      newCanvas.width = oldCanvas.width;
+      newCanvas.height = oldCanvas.height;
+
+      //apply the old canvas to the new one
+      context.drawImage(oldCanvas, 0, 0);
+
+      //return the new canvas
+      return newCanvas;
+    }
   </script>
 </body>
 
